@@ -3,246 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Académico | Comunicación Efectiva — Grupo 3</title>
-    <meta name="description" content="Portafolio académico de evidencias del Grupo 3 del curso de Comunicación Efectiva (2026-I), Universidad Autónoma del Perú.">
-    <!-- SEO Optimization -->
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#1e40af">
-    
-    <!-- Google Fonts: Plus Jakarta Sans for a clean, highly modern corporate-academic look -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons for elegant visual communication -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Academic CSS Stylesheet -->
+    <title>Portafolio Académico Multimodal — Grupo 3 | Universidad Autónoma del Perú</title>
+    <meta name="description" content="Portafolio Académico Multimodal del Grupo 3, curso de Comunicación Efectiva 2026-I. Universidad Autónoma del Perú.">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Header & Frosted-glass Clean Navigation -->
-    <header class="main-header" id="mainHeader">
-        <div class="header-container">
-            <a href="#inicio" class="logo">
-                <span class="logo-bold">Portafolio Académico</span>
-                <span class="logo-divider">|</span>
-                <span class="logo-light">Grupo 3</span>
-            </a>
-            
-            <nav class="nav-menu" id="navMenu">
-                <ul>
-                    <li><a href="#inicio" class="nav-link active">Inicio</a></li>
-                    <li><a href="#equipo" class="nav-link">Nuestro Equipo</a></li>
-                    <li><a href="#evidencias" class="nav-link">Evidencias</a></li>
-                    <li><a href="#reflexion" class="nav-link">Reflexión</a></li>
-                </ul>
-            </nav>
-
-            <div class="header-actions">
-                <span class="institution-badge">UA — 2026-I</span>
-                <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú de navegación" aria-expanded="false">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
+    <!-- ============================================= -->
+    <!-- 1. CABECERA INSTITUCIONAL (HEADER / HERO)     -->
+    <!-- ============================================= -->
+    <header class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="hero-institution">Universidad Autónoma del Perú</span>
+            <h1 class="hero-title">Portafolio Académico Multimodal</h1>
+            <p class="hero-subtitle">Asignatura: Comunicación Efectiva &nbsp;|&nbsp; Grupo N° 3</p>
+            <div class="hero-meta">
+                <span>Mayo 2026</span>
+                <span class="meta-separator" aria-hidden="true"></span>
+                <span>Lima, Perú</span>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Full-screen Overlay Menu (Pristine light/dark) -->
-    <div class="mobile-overlay" id="mobileOverlay">
-        <nav class="mobile-nav">
-            <ul>
-                <li><a href="#inicio" class="mobile-link">Inicio</a></li>
-                <li><a href="#equipo" class="mobile-link">Nuestro Equipo</a></li>
-                <li><a href="#evidencias" class="mobile-link">Evidencias</a></li>
-                <li><a href="#reflexion" class="mobile-link">Reflexión Semestral</a></li>
+    <!-- Navegación fija -->
+    <nav class="main-nav" id="mainNav">
+        <div class="container nav-inner">
+            <a href="#inicio" class="nav-brand">Grupo 3</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#equipo">Equipo</a></li>
+                <li><a href="#evidencias">Evidencias</a></li>
+                <li><a href="#reflexion">Reflexión</a></li>
             </ul>
-        </nav>
-        <div class="mobile-overlay-footer">
-            <span>Universidad Autónoma del Perú</span>
         </div>
-    </div>
+    </nav>
 
-    <!-- Main Content Area -->
     <main>
 
-        <!-- HERO SECTION (Inicio) -->
-        <section id="inicio" class="hero-section">
-            <div class="section-container hero-container">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <span class="badge-dot"></span>
-                        <span class="badge-text">UNIVERSIDAD AUTÓNOMA DEL PERÚ</span>
-                    </div>
-                    
-                    <h1 class="hero-title animate-title">
-                        Comunicación <br>
-                        <span class="text-brand">Efectiva</span>
-                    </h1>
-                    
-                    <p class="hero-subtitle">
-                        Un repositorio académico dinámico diseñado para consolidar y reflexionar sobre nuestro desarrollo en redacción científica, oratoria y expresión multimodal.
-                    </p>
+        <!-- ============================================= -->
+        <!-- 2. NUESTRO EQUIPO Y PROBLEMÁTICA              -->
+        <!-- ============================================= -->
+        <section class="section" id="equipo">
+            <div class="container">
+                <h2 class="section-title">Nuestro Equipo</h2>
+                <p class="section-lead">Estudiantes del curso de Comunicación Efectiva comprometidos con la investigación académica y la producción multimodal.</p>
 
-                    <!-- Elegant Academic Blockquote -->
-                    <blockquote class="academic-quote">
-                        <p class="quote-text">
-                            "El aprendizaje es un proceso continuo donde cada experiencia fortalece nuestras habilidades y nuestra capacidad de comunicarnos efectivamente."
-                        </p>
-                        <cite class="quote-cite">
-                            <span class="cite-author">Grupo 3</span>
-                            <span class="cite-date">24 de Mayo, 2026</span>
-                        </cite>
-                    </blockquote>
-
-                    <div class="hero-actions">
-                        <a href="#evidencias" class="btn btn-primary">
-                            <span>Ver Evidencias</span>
-                            <i data-lucide="arrow-right" class="btn-icon"></i>
-                        </a>
-                        <a href="#equipo" class="btn btn-secondary">
-                            <span>Conocer al Equipo</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Clean, Modern Vector SVG Representation of Multimodal Learning -->
-                <div class="hero-visual">
-                    <div class="visual-container">
-                        <svg viewBox="0 0 500 500" class="hero-svg-graphic" aria-hidden="true">
-                            <defs>
-                                <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#2563eb" />
-                                    <stop offset="100%" stop-color="#0ea5e9" />
-                                </linearGradient>
-                                <linearGradient id="softGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#f1f5f9" />
-                                    <stop offset="100%" stop-color="#e2e8f0" />
-                                </linearGradient>
-                                <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
-                                    <feDropShadow dx="0" dy="15" stdDeviation="15" flood-color="#0f172a" flood-opacity="0.08" />
-                                </filter>
-                            </defs>
-                            
-                            <!-- Elegant overlaying planes representing reading, writing, and speaking -->
-                            <rect x="80" y="80" width="340" height="260" rx="16" fill="url(#softGrad)" filter="url(#softShadow)" stroke="#e2e8f0" stroke-width="1.5"/>
-                            <rect x="50" y="140" width="340" height="260" rx="16" fill="#ffffff" filter="url(#softShadow)" stroke="#e2e8f0" stroke-width="1.5"/>
-                            <rect x="110" y="170" width="310" height="200" rx="12" fill="url(#blueGrad)" opacity="0.9" filter="url(#softShadow)"/>
-                            
-                            <!-- Clean minimal icon symbols inside planes -->
-                            <circle cx="265" cy="270" r="40" fill="#ffffff" opacity="0.2"/>
-                            <path d="M265,245 L285,265 L275,265 L275,295 L255,295 L255,265 L245,265 Z" fill="#ffffff"/>
-                            <line x1="140" y1="210" x2="220" y2="210" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
-                            <line x1="140" y1="230" x2="280" y2="230" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
-                            <line x1="140" y1="250" x2="200" y2="250" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
-                        </svg>
-                        
-                        <!-- Simple visual stat cards -->
-                        <div class="stat-card absolute-1">
-                            <span class="stat-label">Evidencias</span>
-                            <span class="stat-value">6 Entregas</span>
-                        </div>
-                        <div class="stat-card absolute-2">
-                            <span class="stat-label">Sede</span>
-                            <span class="stat-value">Lima, Perú</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- SECCIÓN NUESTRO EQUIPO -->
-        <section id="equipo" class="team-section">
-            <div class="section-container">
-                <div class="section-header">
-                    <span class="section-tag">ORGANIZACIÓN</span>
-                    <h2 class="section-title">Nuestro Equipo (Grupo 3)</h2>
-                    <p class="section-desc">
-                        Estudiantes comprometidos con el desarrollo del pensamiento crítico y la articulación fluida de ideas en contextos universitarios.
-                    </p>
-                </div>
-
-                <!-- Clean Academic Cards Grid -->
                 <div class="team-grid">
-                    
-                    <!-- Miembro 1: Eielson Samir Valberde Espíritu -->
-                    <article class="team-card animate-on-scroll">
-                        <div class="team-card-inner">
-                            <div class="avatar-block">
-                                <svg viewBox="0 0 100 100" class="avatar-svg" aria-hidden="true">
-                                    <circle cx="50" cy="50" r="48" fill="#eff6ff" stroke="#dbeafe" stroke-width="2"/>
-                                    <circle cx="50" cy="40" r="16" fill="#3b82f6"/>
-                                    <path d="M22,80 C22,64 34,58 50,58 C66,58 78,64 78,80 Z" fill="#3b82f6"/>
-                                </svg>
-                            </div>
-                            <div class="member-info">
-                                <span class="member-role">Coordinador</span>
-                                <h3 class="member-name">Eielson Samir Valberde Espíritu</h3>
-                                <p class="member-skill"><i data-lucide="award"></i> Liderazgo & Oratoria</p>
-                                <p class="member-desc">Responsable del control de entregas, planificación académica y estructuración general del portafolio.</p>
-                            </div>
+
+                    <article class="team-card">
+                        <div class="team-avatar">
+                            <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="32" r="14" fill="#2563eb"/><ellipse cx="40" cy="62" rx="22" ry="14" fill="#2563eb"/></svg>
                         </div>
+                        <h3 class="team-name">Nicolás Ricci Ale</h3>
+                        <span class="team-role">Coordinador / Redactor</span>
                     </article>
 
-                    <!-- Miembro 2: Vacante -->
-                    <article class="team-card animate-on-scroll">
-                        <div class="team-card-inner">
-                            <div class="avatar-block">
-                                <svg viewBox="0 0 100 100" class="avatar-svg" aria-hidden="true">
-                                    <circle cx="50" cy="50" r="48" fill="#f8fafc" stroke="#f1f5f9" stroke-width="2"/>
-                                    <circle cx="50" cy="40" r="16" fill="#94a3b8"/>
-                                    <path d="M22,80 C22,64 34,58 50,58 C66,58 78,64 78,80 Z" fill="#94a3b8"/>
-                                </svg>
-                            </div>
-                            <div class="member-info">
-                                <span class="member-role">Redacción</span>
-                                <h3 class="member-name">Integrante 2</h3>
-                                <p class="member-skill"><i data-lucide="feather"></i> Ortografía & Sintaxis</p>
-                                <p class="member-desc">Revisión filológica de fuentes secundarias, edición ortográfica y corrección de estilo de ensayos.</p>
-                            </div>
+                    <article class="team-card">
+                        <div class="team-avatar">
+                            <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="32" r="14" fill="#0ea5e9"/><ellipse cx="40" cy="62" rx="22" ry="14" fill="#0ea5e9"/></svg>
                         </div>
+                        <h3 class="team-name">Joel Salinas Vásquez</h3>
+                        <span class="team-role">Investigador / Locutor</span>
                     </article>
 
-                    <!-- Miembro 3: Vacante -->
-                    <article class="team-card animate-on-scroll">
-                        <div class="team-card-inner">
-                            <div class="avatar-block">
-                                <svg viewBox="0 0 100 100" class="avatar-svg" aria-hidden="true">
-                                    <circle cx="50" cy="50" r="48" fill="#f8fafc" stroke="#f1f5f9" stroke-width="2"/>
-                                    <circle cx="50" cy="40" r="16" fill="#94a3b8"/>
-                                    <path d="M22,80 C22,64 34,58 50,58 C66,58 78,64 78,80 Z" fill="#94a3b8"/>
-                                </svg>
-                            </div>
-                            <div class="member-info">
-                                <span class="member-role">Investigación</span>
-                                <h3 class="member-name">Integrante 3</h3>
-                                <p class="member-skill"><i data-lucide="search"></i> Búsqueda Científica</p>
-                                <p class="member-desc">Recolección de datos primarios de bibliotecas científicas (Scopus, Google Académico) y fichaje de lecturas.</p>
-                            </div>
+                    <article class="team-card">
+                        <div class="team-avatar">
+                            <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="32" r="14" fill="#0ea5e9"/><ellipse cx="40" cy="62" rx="22" ry="14" fill="#0ea5e9"/></svg>
                         </div>
+                        <h3 class="team-name">Johnson Mostajo Rojas</h3>
+                        <span class="team-role">Investigador / Editor técnico</span>
                     </article>
 
-                    <!-- Miembro 4: Vacante -->
-                    <article class="team-card animate-on-scroll">
-                        <div class="team-card-inner">
-                            <div class="avatar-block">
-                                <svg viewBox="0 0 100 100" class="avatar-svg" aria-hidden="true">
-                                    <circle cx="50" cy="50" r="48" fill="#f8fafc" stroke="#f1f5f9" stroke-width="2"/>
-                                    <circle cx="50" cy="40" r="16" fill="#94a3b8"/>
-                                    <path d="M22,80 C22,64 34,58 50,58 C66,58 78,64 78,80 Z" fill="#94a3b8"/>
-                                </svg>
-                            </div>
-                            <div class="member-info">
-                                <span class="member-role">Multimodalidad</span>
-                                <h3 class="member-name">Integrante 4</h3>
-                                <p class="member-skill"><i data-lucide="image"></i> Síntesis & Diseño</p>
-                                <p class="member-desc">Desarrollo de diagramas, infografías estructuradas e integración de soportes sonoros y multimedia.</p>
-                            </div>
+                    <article class="team-card">
+                        <div class="team-avatar">
+                            <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="32" r="14" fill="#0ea5e9"/><ellipse cx="40" cy="62" rx="22" ry="14" fill="#0ea5e9"/></svg>
                         </div>
+                        <h3 class="team-name">Anderson Martínez Junes</h3>
+                        <span class="team-role">Redactor / Locutor</span>
+                    </article>
+
+                </div>
+
+                <!-- Problemática Central -->
+                <div class="problematica-block">
+                    <h3 class="problematica-label">Problemática Central</h3>
+                    <p class="problematica-text">
+                        La ineficacia de la educación virtual en las zonas rurales de Lima frente al ODS 4 debido a las brechas de conectividad e infraestructura.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ============================================= -->
+        <!-- 3. EVIDENCIAS DE APRENDIZAJE (REPOSITORIO)     -->
+        <!-- ============================================= -->
+        <section class="section section-alt" id="evidencias">
+            <div class="container">
+                <h2 class="section-title">Evidencias de Aprendizaje</h2>
+                <p class="section-lead">Repositorio de producciones académicas desarrolladas durante el semestre 2026-I.</p>
+
+                <div class="evidence-grid">
+
+                    <!-- Tarjeta 1: Vídeo Colaborativo -->
+                    <article class="evidence-card">
+                        <div class="evidence-icon">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="4" y="8" width="40" height="32" rx="4"/>
+                                <polygon points="20,18 32,24 20,30"/>
+                            </svg>
+                        </div>
+                        <h3 class="evidence-title">Vídeo Colaborativo</h3>
+                        <p class="evidence-desc">Cortometraje audiovisual de sensibilización sobre la brecha digital rural.</p>
+                        <a href="#" class="btn" onclick="alert('Enlace al vídeo pendiente de configurar.'); return false;">Ver documento</a>
+                    </article>
+
+                    <!-- Tarjeta 2: Texto Argumentativo -->
+                    <article class="evidence-card">
+                        <div class="evidence-icon">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 4h18l10 10v30a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+                                <polyline points="30,4 30,14 40,14"/>
+                                <line x1="16" y1="22" x2="34" y2="22"/>
+                                <line x1="16" y1="28" x2="34" y2="28"/>
+                                <line x1="16" y1="34" x2="26" y2="34"/>
+                            </svg>
+                        </div>
+                        <h3 class="evidence-title">Texto Argumentativo</h3>
+                        <p class="evidence-desc">Documento académico sustentando la ineficacia de la virtualidad sin infraestructura.</p>
+                        <a href="#" class="btn" onclick="alert('Enlace al documento pendiente de configurar.'); return false;">Ver documento</a>
+                    </article>
+
+                    <!-- Tarjeta 3: Informe Académico -->
+                    <article class="evidence-card">
+                        <div class="evidence-icon">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M8 6h24l8 8v28a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/>
+                                <polyline points="32,6 32,14 40,14"/>
+                                <circle cx="24" cy="28" r="8"/>
+                                <line x1="24" y1="24" x2="24" y2="28"/>
+                                <line x1="24" y1="28" x2="28" y2="28"/>
+                            </svg>
+                        </div>
+                        <h3 class="evidence-title">Informe Académico</h3>
+                        <p class="evidence-desc">Investigación previa sobre las consecuencias en el ODS 4.</p>
+                        <a href="#" class="btn" onclick="alert('Enlace al informe pendiente de configurar.'); return false;">Ver documento</a>
+                    </article>
+
+                    <!-- Tarjeta 4: Podcast 'Señal Perdida' -->
+                    <article class="evidence-card">
+                        <div class="evidence-icon">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M24 4a10 10 0 0 1 10 10v8a10 10 0 0 1-20 0v-8a10 10 0 0 1 10-10z"/>
+                                <path d="M4 20a20 20 0 0 0 40 0"/>
+                                <line x1="24" y1="36" x2="24" y2="44"/>
+                                <line x1="16" y1="44" x2="32" y2="44"/>
+                            </svg>
+                        </div>
+                        <h3 class="evidence-title">Podcast <em>Señal Perdida</em></h3>
+                        <p class="evidence-desc">Análisis crítico y contraste digital de narrativas en redes sociales vs. fuentes académicas.</p>
+                        <a href="#" class="btn" onclick="alert('Enlace al podcast pendiente de configurar.'); return false;">Escuchar podcast</a>
                     </article>
 
                 </div>
@@ -250,475 +175,56 @@
         </section>
 
 
-        <!-- SECCIÓN EVIDENCIAS -->
-        <section id="evidencias" class="portfolio-section">
-            <div class="section-container">
-                <div class="section-header">
-                    <span class="section-tag">REPOSITORIO</span>
-                    <h2 class="section-title">Evidencias de Aprendizaje</h2>
-                    <p class="section-desc">
-                        Compilación estructurada de actividades del semestre orientadas al dominio de las competencias comunicativas y el debate académico.
-                    </p>
-                </div>
+        <!-- ============================================= -->
+        <!-- 4. REFLEXIÓN METACOGNITIVA FINAL               -->
+        <!-- ============================================= -->
+        <section class="section" id="reflexion">
+            <div class="container">
+                <h2 class="section-title">Reflexión Metacognitiva Final</h2>
+                <p class="section-lead">Balance integral de nuestra experiencia académica a lo largo del semestre.</p>
 
-                <!-- Clean Filter Navigation -->
-                <div class="filter-container">
-                    <div class="filter-controls">
-                        <button class="filter-btn active" data-filter="all">Todos</button>
-                        <button class="filter-btn" data-filter="text"><i data-lucide="file-text" class="btn-filter-icon"></i>Textos</button>
-                        <button class="filter-btn" data-filter="video"><i data-lucide="play-circle" class="btn-filter-icon"></i>Audiovisual</button>
-                        <button class="filter-btn" data-filter="presentation"><i data-lucide="presentation" class="btn-filter-icon"></i>Presentaciones</button>
-                    </div>
-                    <div class="filter-indicator">
-                        <span id="evidenceCount">Mostrando: 6 de 6</span>
-                    </div>
-                </div>
+                <div class="pillar-grid">
 
-                <!-- Gallery Cards Grid -->
-                <div class="gallery-grid" id="galleryGrid">
-                    
-                    <!-- Evidencia 1: Ensayo Argumentativo -->
-                    <article class="gallery-card show" data-category="text">
-                        <div class="card-media text-bg">
-                            <i data-lucide="file-text" class="card-media-icon"></i>
-                            <span class="card-category-tag">Texto</span>
-                        </div>
-                        <div class="card-body">
-                            <span class="card-meta">Semana 4 — Calificado</span>
-                            <h3 class="card-title">Ensayo Argumentativo</h3>
-                            <p class="card-desc">Análisis cooperativo crítico sobre los dilemas éticos derivados del uso de inteligencias artificiales en el ámbito educativo universitario.</p>
-                            <div class="card-footer">
-                                <span class="card-format">PDF Académico</span>
-                                <button class="btn-detail open-modal-btn" data-modal="modal-ensayo">
-                                    <span>Ver Ficha</span>
-                                    <i data-lucide="chevron-right"></i>
-                                </button>
-                            </div>
-                        </div>
+                    <article class="pillar-card">
+                        <span class="pillar-number">01</span>
+                        <h3 class="pillar-title">Síntesis de aprendizajes significativos</h3>
+                        <p class="pillar-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia arcu nec diam fermentum, sed viverra lectus commodo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer efficitur sem nec libero malesuada, in ultrices nulla fringilla.</p>
                     </article>
 
-                    <!-- Evidencia 2: Video de Exposición -->
-                    <article class="gallery-card show" data-category="video">
-                        <div class="card-media video-bg">
-                            <i data-lucide="play-circle" class="card-media-icon"></i>
-                            <span class="card-category-tag">Audiovisual</span>
-                        </div>
-                        <div class="card-body">
-                            <span class="card-meta">Semana 7 — Calificado</span>
-                            <h3 class="card-title">Video de Exposición</h3>
-                            <p class="card-desc">Sustentación oral formal evaluando una estrategia para erradicar las asimetrías de información en equipos académicos.</p>
-                            <div class="card-footer">
-                                <span class="card-format">Video MP4</span>
-                                <button class="btn-detail open-modal-btn" data-modal="modal-video">
-                                    <span>Ver Ficha</span>
-                                    <i data-lucide="chevron-right"></i>
-                                </button>
-                            </div>
-                        </div>
+                    <article class="pillar-card">
+                        <span class="pillar-number">02</span>
+                        <h3 class="pillar-title">Autoevaluación de fortalezas y debilidades grupales</h3>
+                        <p class="pillar-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium orci vel libero volutpat, eget pellentesque odio euismod. Praesent at tortor sit amet sapien sollicitudin facilisis. Nullam tincidunt metus et arcu sagittis, vel consequat purus molestie.</p>
                     </article>
 
-                    <!-- Evidencia 3: Infografía Interactiva -->
-                    <article class="gallery-card show" data-category="presentation">
-                        <div class="card-media presentation-bg">
-                            <i data-lucide="presentation" class="card-media-icon"></i>
-                            <span class="card-category-tag">Presentación</span>
-                        </div>
-                        <div class="card-body">
-                            <span class="card-meta">Semana 3 — Calificado</span>
-                            <h3 class="card-title">Infografía Interactiva</h3>
-                            <p class="card-desc">Síntesis gráfica de los elementos del proceso de comunicación asertiva y el impacto de los ruidos ambientales en el mensaje.</p>
-                            <div class="card-footer">
-                                <span class="card-format">Ficha Digital</span>
-                                <button class="btn-detail open-modal-btn" data-modal="modal-info">
-                                    <span>Ver Ficha</span>
-                                    <i data-lucide="chevron-right"></i>
-                                </button>
-                            </div>
-                        </div>
+                    <article class="pillar-card">
+                        <span class="pillar-number">03</span>
+                        <h3 class="pillar-title">Transferencia de competencias a la vida profesional y universitaria</h3>
+                        <p class="pillar-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit enim at velit convallis, eu cursus nisl interdum. Sed scelerisque suscipit felis, at posuere nisi blandit id. Aliquam erat volutpat. Donec dictum dolor non tortor aliquet vehicula.</p>
                     </article>
 
-                    <!-- Evidencia 4: Discurso Persuasivo -->
-                    <article class="gallery-card show" data-category="text">
-                        <div class="card-media text-bg">
-                            <i data-lucide="file-text" class="card-media-icon"></i>
-                            <span class="card-category-tag">Texto</span>
-                        </div>
-                        <div class="card-body">
-                            <span class="card-meta">Semana 11 — Calificado</span>
-                            <h3 class="card-title">Discurso Persuasivo</h3>
-                            <p class="card-desc">Texto formal redactado para oratoria persuasiva con enfoque en la concienciación y adopción de medidas de sostenibilidad ambiental.</p>
-                            <div class="card-footer">
-                                <span class="card-format">Documento Word</span>
-                                <button class="btn-detail open-modal-btn" data-modal="modal-discurso">
-                                    <span>Ver Ficha</span>
-                                    <i data-lucide="chevron-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Evidencia 5: Podcast Semestral -->
-                    <article class="gallery-card show" data-category="video">
-                        <div class="card-media video-bg">
-                            <i data-lucide="mic" class="card-media-icon"></i>
-                            <span class="card-category-tag">Audiovisual</span>
-                        </div>
-                        <div class="card-body">
-                            <span class="card-meta">Semana 13 — Calificado</span>
-                            <h3 class="card-title">Podcast Semestral</h3>
-                            <p class="card-desc">Conversatorio de discusión abierta sobre los vicios idiomáticos recurrentes en el lenguaje profesional y cómo superarlos.</p>
-                            <div class="card-footer">
-                                <span class="card-format">Audio Estéreo MP3</span>
-                                <button class="btn-detail open-modal-btn" data-modal="modal-podcast">
-                                    <span>Ver Ficha</span>
-                                    <i data-lucide="chevron-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Evidencia 6: Diapositivas de Proyecto -->
-                    <article class="gallery-card show" data-category="presentation">
-                        <div class="card-media presentation-bg">
-                            <i data-lucide="presentation" class="card-media-icon"></i>
-                            <span class="card-category-tag">Presentación</span>
-                        </div>
-                        <div class="card-body">
-                            <span class="card-meta">Semana 15 — Completado</span>
-                            <h3 class="card-title">Diapositivas de Proyecto</h3>
-                            <p class="card-desc">Material de diapositivas final desarrollado bajo principios de minimalismo para resumir la evolución del portafolio.</p>
-                            <div class="card-footer">
-                                <span class="card-format">Presentación Diapositivas</span>
-                                <button class="btn-detail open-modal-btn" data-modal="modal-slide">
-                                    <span>Ver Ficha</span>
-                                    <i data-lucide="chevron-right"></i>
-                                </button>
-                            </div>
-                        </div>
+                    <article class="pillar-card">
+                        <span class="pillar-number">04</span>
+                        <h3 class="pillar-title">Agradecimiento a la cátedra</h3>
+                        <p class="pillar-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dignissim nisi vitae neque ultrices, a pretium magna faucibus. Quisque congue, magna eget gravida egestas, velit felis cursus tortor, ac elementum mi turpis nec risus.</p>
                     </article>
 
                 </div>
-            </div>
-        </section>
-
-
-        <!-- SECCIÓN REFLEXIÓN SEMESTRAL -->
-        <section id="reflexion" class="reflection-section">
-            <div class="section-container">
-                <div class="section-header">
-                    <span class="section-tag">APRENDIZAJE</span>
-                    <h2 class="section-title">Reflexión Semestral</h2>
-                    <p class="section-desc">
-                        Análisis retrospectivo sobre nuestro punto de partida, los desafíos de redacción grupal y el desarrollo de competencias comunicativas.
-                    </p>
-                </div>
-
-                <!-- Academic editorial block -->
-                <div class="reflection-layout">
-                    <div class="reflection-content animate-on-scroll">
-                        <h3 class="reflection-sub-title">1. Evolución Colectiva y Desafíos Iniciales</h3>
-                        <p class="reflection-p">
-                            Al iniciar el curso de <strong>Comunicación Efectiva (2026-I)</strong>, el principal reto del Grupo 3 consistió en alinear los distintos niveles de redacción y expresión oral individuales para trabajar bajo un esquema verdaderamente multimodal y cooperativo. Al principio, la articulación de ideas solía fragmentarse, pero a través de dinámicas de revisión entre pares y del constante fichaje de lecturas científicas, aprendimos a unificar criterios académicos coherentes.
-                        </p>
-                        <p class="reflection-p">
-                            La redacción colaborativa del <em>Ensayo Argumentativo</em> representó un hito crítico, forzando debates constructivos sobre estructura de párrafos, transiciones lógicas y el rigor formal en la citación de fuentes secundarias. Esto nos enseñó a valorar la precisión idiomática y a ver los comentarios constructivos como una valiosa herramienta de mejora continua.
-                        </p>
-                    </div>
-                    
-                    <div class="reflection-content animate-on-scroll">
-                        <h3 class="reflection-sub-title">2. Competencias Adquiridas</h3>
-                        <p class="reflection-p">
-                            La transición a soportes de comunicación audiovisual y digital (como la exposición grabada en video y el desarrollo del debate en formato podcast) consolidó nuestras competencias no verbales. Ejercitar la kinésica, el contacto visual controlado, la correcta gesticulación y la modulación de voz nos dio herramientas fundamentales para transmitir credibilidad en entornos profesionales y públicos.
-                        </p>
-                        <p class="reflection-p">
-                            Al concluir este periodo académico, nos sentimos preparados para articular discursos estructurados, sintetizar datos complejos mediante infografías y adaptarnos de forma asertiva a cualquier canal, ya sea digital, escrito u oral, asegurando siempre que el receptor reciba un mensaje transparente e impactante.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Circular style metric values -->
-                <div class="reflection-indicators-box animate-on-scroll">
-                    <h4 class="indicators-box-title">Consolidación del Portafolio</h4>
-                    <div class="indicators-row">
-                        <div class="indicator-item">
-                            <span class="indicator-percent">95%</span>
-                            <span class="indicator-name">Comprensión Lectora y Síntesis</span>
-                        </div>
-                        <div class="indicator-item">
-                            <span class="indicator-percent">92%</span>
-                            <span class="indicator-name">Rigor de Redacción Académica</span>
-                        </div>
-                        <div class="indicator-item">
-                            <span class="indicator-percent">96%</span>
-                            <span class="indicator-name">Expresión Oral e Impacto</span>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
 
     </main>
 
-    <!-- FOOTER -->
+    <!-- ============================================= -->
+    <!-- 5. FOOTER                                      -->
+    <!-- ============================================= -->
     <footer class="main-footer">
-        <div class="section-container footer-container">
-            <div class="footer-left">
-                <span class="footer-logo">Portafolio Académico | Grupo 3</span>
-                <p class="footer-text">
-                    Repositorio estático de evidencias desarrollado para demostrar el cumplimiento del temario y competencias de comunicación oral y escrita.
-                </p>
-            </div>
-            <div class="footer-right">
-                <div class="footer-col">
-                    <span class="footer-col-title">SECCIONES</span>
-                    <ul class="footer-links">
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#equipo">Equipo</a></li>
-                        <li><a href="#evidencias">Evidencias</a></li>
-                        <li><a href="#reflexion">Reflexión</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <span class="footer-col-title">INFORMACIÓN</span>
-                    <p class="footer-info">
-                        Curso: Comunicación Efectiva<br>
-                        Periodo: 2026 - I<br>
-                        Universidad Autónoma del Perú
-                    </p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <div class="section-container footer-bottom-container">
-                <p class="copyright">© 2026 Grupo 3. Derechos reservados — Universidad Autónoma del Perú.</p>
-                <span class="portal-badge">PORTAL ACADÉMICO OFICIAL</span>
-            </div>
+        <div class="container">
+            <p>&copy; 2026 Grupo 3 &mdash; Comunicación Efectiva. Universidad Autónoma del Perú.</p>
         </div>
     </footer>
 
-
-    <!-- MODALS FOR PORTFOLIO DETAIL PREVIEWS -->
-    
-    <!-- Modal 1: Ensayo Argumentativo -->
-    <div class="modal" id="modal-ensayo" role="dialog" aria-modal="true" aria-labelledby="title-ensayo">
-        <div class="modal-overlay"></div>
-        <div class="modal-container">
-            <div class="modal-header">
-                <div class="modal-header-info">
-                    <span class="modal-category">TEXTO / ENSAYO</span>
-                    <h3 class="modal-title" id="title-ensayo">Ensayo Argumentativo</h3>
-                </div>
-                <button class="modal-close-btn" aria-label="Cerrar"><i data-lucide="x"></i></button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-meta-grid">
-                    <div class="meta-card"><span class="lbl">Semana</span> <span class="val">Semana 4</span></div>
-                    <div class="meta-card"><span class="lbl">Estado</span> <span class="val green">Calificado (20/20)</span></div>
-                    <div class="meta-card"><span class="lbl">Formato</span> <span class="val">PDF Académico</span></div>
-                </div>
-                
-                <div class="academic-doc-preview">
-                    <h4 class="doc-preview-title">Impacto Ético de las Tecnologías de Inteligencia Artificial en el Modelo Educativo</h4>
-                    <p class="doc-preview-authors">Redactores: Grupo 3 (Valberde, et al.)</p>
-                    <div class="doc-preview-body">
-                        <p><strong>Resumen del trabajo:</strong> El presente ensayo cooperativo analiza críticamente la irrupción de herramientas de IA generativa en las aulas universitarias de Lima. Se argumenta que, si bien incrementan la velocidad de análisis, es perentorio normar su uso para evitar la atrofia del razonamiento reflexivo independiente del estudiante. El documento está sustentado con citas científicas en formato APA.</p>
-                    </div>
-                </div>
-                
-                <div class="resource-download-block">
-                    <i data-lucide="file-text" class="resource-icon"></i>
-                    <div class="resource-details">
-                        <span class="resource-filename">ensayo_argumentativo_final.pdf</span>
-                        <span class="resource-meta">Tamaño: 1.2 MB — Formato Documental PDF</span>
-                    </div>
-                    <button class="btn btn-primary btn-sm" onclick="alert('Descargando archivo simulado para revisión académica.');">Descargar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 2: Video de Exposición -->
-    <div class="modal" id="modal-video" role="dialog" aria-modal="true" aria-labelledby="title-video">
-        <div class="modal-overlay"></div>
-        <div class="modal-container">
-            <div class="modal-header">
-                <div class="modal-header-info">
-                    <span class="modal-category">AUDIOVISUAL / EXPOSICIÓN</span>
-                    <h3 class="modal-title" id="title-video">Video de Exposición</h3>
-                </div>
-                <button class="modal-close-btn" aria-label="Cerrar"><i data-lucide="x"></i></button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-meta-grid">
-                    <div class="meta-card"><span class="lbl">Semana</span> <span class="val">Semana 7</span></div>
-                    <div class="meta-card"><span class="lbl">Calificación</span> <span class="val green">Sobresaliente</span></div>
-                    <div class="meta-card"><span class="lbl">Duración</span> <span class="val">10:45 Minutos</span></div>
-                </div>
-                
-                <div class="media-simulated-player video-player">
-                    <div class="player-overlay">
-                        <i data-lucide="play" class="player-play-icon"></i>
-                        <span>Reproducir Exposición Académica</span>
-                    </div>
-                </div>
-                
-                <p class="modal-description-text">
-                    <strong>Resumen del Recurso:</strong> Grabación audiovisual de la sustentación formal del grupo. En este ejercicio se aplicaron las técnicas de expresión corporal verbal y no verbal recomendadas, controlando las muletillas corporales y modulando la entonación para capturar la atención del espectador.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 3: Infografía Interactiva -->
-    <div class="modal" id="modal-info" role="dialog" aria-modal="true" aria-labelledby="title-info">
-        <div class="modal-overlay"></div>
-        <div class="modal-container">
-            <div class="modal-header">
-                <div class="modal-header-info">
-                    <span class="modal-category">PRESENTACIÓN / DIGITAL</span>
-                    <h3 class="modal-title" id="title-info">Infografía Interactiva</h3>
-                </div>
-                <button class="modal-close-btn" aria-label="Cerrar"><i data-lucide="x"></i></button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-meta-grid">
-                    <div class="meta-card"><span class="lbl">Semana</span> <span class="val">Semana 3</span></div>
-                    <div class="meta-card"><span class="lbl">Herramienta</span> <span class="val">Diseño Digital</span></div>
-                    <div class="meta-card"><span class="lbl">Puntos clave</span> <span class="val">3 Modelos teóricos</span></div>
-                </div>
-                
-                <div class="media-simulated-player infographic-player">
-                    <div class="infographic-mock-content">
-                        <span class="mock-bullet">1. Elementos del Proceso</span>
-                        <span class="mock-bullet">2. Barreras Comunes</span>
-                        <span class="mock-bullet">3. Escucha Asertiva</span>
-                    </div>
-                </div>
-                
-                <p class="modal-description-text">
-                    <strong>Resumen del Recurso:</strong> Infografía elaborada para sintetizar la teoría clásica de la comunicación. A través de este recurso visual, demostramos nuestra habilidad para condensar y jerarquizar información densa, haciendo accesible un contenido técnico de forma amigable.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 4: Discurso Persuasivo -->
-    <div class="modal" id="modal-discurso" role="dialog" aria-modal="true" aria-labelledby="title-discurso">
-        <div class="modal-overlay"></div>
-        <div class="modal-container">
-            <div class="modal-header">
-                <div class="modal-header-info">
-                    <span class="modal-category">TEXTO / ORATORIA</span>
-                    <h3 class="modal-title" id="title-discurso">Discurso Persuasivo</h3>
-                </div>
-                <button class="modal-close-btn" aria-label="Cerrar"><i data-lucide="x"></i></button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-meta-grid">
-                    <div class="meta-card"><span class="lbl">Semana</span> <span class="val">Semana 11</span></div>
-                    <div class="meta-card"><span class="lbl">Tono</span> <span class="val">Formal Persuasivo</span></div>
-                    <div class="meta-card"><span class="lbl">Objetivo</span> <span class="val">Acción Sostenible</span></div>
-                </div>
-                
-                <div class="academic-doc-preview">
-                    <h4 class="doc-preview-title">La urgencia de la acción cooperativa ante la crisis ambiental global</h4>
-                    <p class="doc-preview-authors">Redactores: Grupo 3</p>
-                    <div class="doc-preview-body">
-                        <p><strong>Fragmento del Discurso:</strong> Estimada docente y compañeros. ¿Cuántas advertencias científicas más necesitamos para reaccionar ante lo evidente? La crisis climática no es una hipótesis lejana; es el presente que ya golpea nuestros recursos. Los verdaderos líderes no eluden la realidad, articulan soluciones conjuntas...</p>
-                    </div>
-                </div>
-                
-                <div class="resource-download-block">
-                    <i data-lucide="file-text" class="resource-icon"></i>
-                    <div class="resource-details">
-                        <span class="resource-filename">discurso_persuasivo_final.docx</span>
-                        <span class="resource-meta">Tamaño: 340 KB — Documento Word</span>
-                    </div>
-                    <button class="btn btn-primary btn-sm" onclick="alert('Descargando archivo simulado.');">Descargar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 5: Podcast Semestral -->
-    <div class="modal" id="modal-podcast" role="dialog" aria-modal="true" aria-labelledby="title-podcast">
-        <div class="modal-overlay"></div>
-        <div class="modal-container">
-            <div class="modal-header">
-                <div class="modal-header-info">
-                    <span class="modal-category">AUDIOVISUAL / AUDIO DEBATE</span>
-                    <h3 class="modal-title" id="title-podcast">Podcast Semestral</h3>
-                </div>
-                <button class="modal-close-btn" aria-label="Cerrar"><i data-lucide="x"></i></button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-meta-grid">
-                    <div class="meta-card"><span class="lbl">Semana</span> <span class="val">Semana 13</span></div>
-                    <div class="meta-card"><span class="lbl">Formato</span> <span class="val">Audio MP3 Stereo</span></div>
-                    <div class="meta-card"><span class="lbl">Participación</span> <span class="val">Mesa redonda</span></div>
-                </div>
-                
-                <div class="media-simulated-player audio-player">
-                    <div class="audio-panel">
-                        <i data-lucide="volume-2" class="audio-panel-icon"></i>
-                        <span class="audio-panel-title">Conversatorio: Vicios del Lenguaje</span>
-                    </div>
-                    <div class="audio-progress-bar">
-                        <div class="audio-progress-fill" style="width: 40%"></div>
-                    </div>
-                    <div class="audio-controls">
-                        <span class="time">04:15 / 12:30</span>
-                        <i data-lucide="play" class="btn-play-sm"></i>
-                    </div>
-                </div>
-                
-                <p class="modal-description-text">
-                    <strong>Resumen del Recurso:</strong> Un audio de debate coordinado donde los integrantes analizan los principales vicios de dicción (redundancias, barbarismos, cacofonías) frecuentes en la oratoria universitaria en Lima, proponiendo metodologías lingüísticas sencillas para erradicarlos.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 6: Diapositivas de Proyecto -->
-    <div class="modal" id="modal-slide" role="dialog" aria-modal="true" aria-labelledby="title-slide">
-        <div class="modal-overlay"></div>
-        <div class="modal-container">
-            <div class="modal-header">
-                <div class="modal-header-info">
-                    <span class="modal-category">PRESENTACIÓN / EXPOSICIÓN</span>
-                    <h3 class="modal-title" id="title-slide">Diapositivas de Proyecto</h3>
-                </div>
-                <button class="modal-close-btn" aria-label="Cerrar"><i data-lucide="x"></i></button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-meta-grid">
-                    <div class="meta-card"><span class="lbl">Semana</span> <span class="val">Semana 15</span></div>
-                    <div class="meta-card"><span class="lbl">N° Hojas</span> <span class="val">12 Diapositivas</span></div>
-                    <div class="meta-card"><span class="lbl">Objetivo</span> <span class="val">Síntesis Final</span></div>
-                </div>
-                
-                <div class="media-simulated-player slides-player">
-                    <div class="slide-navigation-mock">
-                        <i data-lucide="chevron-left"></i>
-                        <div class="slide-page">
-                            <span class="slide-num">SLIDE 01 / 12</span>
-                            <h5>Evolución de Competencias Comunicativas</h5>
-                            <p>Análisis retrospectivo semestral — Grupo 3</p>
-                        </div>
-                        <i data-lucide="chevron-right"></i>
-                    </div>
-                </div>
-                
-                <p class="modal-description-text">
-                    <strong>Resumen del Recurso:</strong> Conjunto de diapositivas finales utilizadas en la sustentación de portafolios. Siguen un diseño de alto contraste tipográfico y uso mínimo de texto para garantizar una exposición ágil y dinámica sin sobrecarga cognitiva.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Clean Navigation Logic -->
+    <!-- Lógica mínima de navegación -->
     <script src="js/main.js"></script>
 </body>
 </html>
