@@ -112,11 +112,8 @@
 
                     <!-- Tarjeta 1: Vídeo Colaborativo -->
                     <article class="evidence-card">
-                        <div class="evidence-icon">
-                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <rect x="4" y="8" width="40" height="32" rx="4"/>
-                                <polygon points="20,18 32,24 20,30"/>
-                            </svg>
+                        <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 20px; border-radius: 4px; border: 1px solid var(--color-border);">
+                            <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                         <h3 class="evidence-title">Vídeo Colaborativo</h3>
                         <p class="evidence-desc">Cortometraje audiovisual de sensibilización sobre la brecha digital rural.</p>
@@ -219,8 +216,10 @@
     <!-- 5. FOOTER                                      -->
     <!-- ============================================= -->
     <footer class="main-footer">
-        <div class="container">
-            <p>&copy; 2026 Grupo 3 &mdash; Comunicación Efectiva. Universidad Autónoma del Perú.</p>
+        <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+            <p style="font-weight: 700; color: var(--color-accent); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">Universidad Autónoma del Perú</p>
+            <p style="color: #cbd5e1;">&copy; 2026 Grupo N° 3 &mdash; Asignatura: Comunicación Efectiva.</p>
+            <p style="font-size: 0.85rem; color: #94a3b8;">Desarrollado para fines académicos. Lima, Perú.</p>
         </div>
     </footer>
 

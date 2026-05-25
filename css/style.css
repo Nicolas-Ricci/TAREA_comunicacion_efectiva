@@ -7,10 +7,10 @@
 
 /* 1. VARIABLES Y RESET */
 :root {
-    /* Paleta Institucional */
-    --color-primary: #0a192f;      /* Azul Marino Oscuro */
-    --color-secondary: #1e3a8a;    /* Azul Marino Clásico */
-    --color-accent: #0ea5e9;       /* Celeste */
+    /* Paleta Institucional (Universidad Autónoma del Perú: Guinda/Rojo y Dorado) */
+    --color-primary: #8a1538;      /* Guinda Institucional */
+    --color-secondary: #a31d36;    /* Rojo secundario */
+    --color-accent: #d4af37;       /* Dorado/Oro */
     --color-bg-light: #f8fafc;     /* Gris Claro (Fondo) */
     --color-white: #ffffff;        /* Blanco */
     
@@ -286,7 +286,7 @@ body {
 /* 6. SECCIÓN: EVIDENCIAS DE APRENDIZAJE */
 .evidence-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* 2x2 forzado en escritorio */
     gap: 30px;
 }
 
@@ -350,7 +350,7 @@ body {
 /* 7. SECCIÓN: REFLEXIÓN METACOGNITIVA */
 .pillar-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* 2x2 forzado en escritorio */
     gap: 30px;
 }
 
@@ -440,5 +440,10 @@ body {
 
     .problematica-text {
         font-size: 1.1rem;
+    }
+    
+    /* Grillas a 1 columna en móviles */
+    .evidence-grid, .pillar-grid {
+        grid-template-columns: 1fr;
     }
 }
