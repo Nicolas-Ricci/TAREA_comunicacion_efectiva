@@ -173,8 +173,9 @@ body {
 
 /* Scroll progress bar (creada por JS) */
 .nav-progress {
-    position: fixed; top: 72px; left: 0; height: 2px; width: 0%;
+    position: fixed; top: 72px; left: 0; height: 5px; width: 0%;
     background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 1001; transition: width 0.1s linear;
 }
 
