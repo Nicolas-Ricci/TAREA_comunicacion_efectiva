@@ -1,211 +1,518 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
+<html lang="es"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Académico Multimodal — Grupo 3 | Universidad Autónoma del Perú</title>
-    <meta name="description" content="Portafolio Académico Multimodal del Grupo 3, curso de Comunicación Efectiva 2026-I. Universidad Autónoma del Perú.">
+    <title>Portafolio Académico Multimodal | Universidad Autónoma del Perú</title>
+    <meta name="description" content="Portafolio Académico Multimodal del Grupo 3, curso de Comunicación Efectiva. Universidad Autónoma del Perú.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- ============================================= -->
-    <!-- 1. CABECERA INSTITUCIONAL (HEADER / HERO)     -->
-    <!-- ============================================= -->
-    <header class="hero" id="inicio">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <span class="hero-institution">Universidad Autónoma del Perú</span>
-            <h1 class="hero-title">Portafolio Académico Multimodal</h1>
-            <p class="hero-subtitle">Asignatura: Comunicación Efectiva &nbsp;|&nbsp; Grupo N° 3</p>
-            <div class="hero-meta">
-                <span>Mayo 2026</span>
-                <span class="meta-separator" aria-hidden="true"></span>
-                <span>Lima, Perú</span>
-            </div>
-        </div>
-    </header>
+    <!-- Botones de Modo Edición Flotante (CMS Local — se ocultan en producción) -->
+    <button id="editModeBtn" class="floating-btn edit-btn hidden" aria-label="Modo de edición">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+        <span>Editar Contenido</span>
+    </button>
+    <button id="saveModeBtn" class="floating-btn save-btn hidden" aria-label="Guardar cambios">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+        <span>Guardar Cambios</span>
+    </button>
 
     <!-- Navegación fija -->
     <nav class="main-nav" id="mainNav">
         <div class="container nav-inner">
-            <a href="#inicio" class="nav-brand">Grupo 3</a>
+            <a href="#inicio" class="nav-brand">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg>
+                <span>PAM <em>·</em> Grupo N.° 3</span>
+            </a>
             <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#equipo">Equipo</a></li>
+                <li><a href="#autores">Autores</a></li>
+                <li><a href="#problematica">Problemática</a></li>
                 <li><a href="#evidencias">Evidencias</a></li>
                 <li><a href="#reflexion">Reflexión</a></li>
+                <li><a href="#referencias">Referencias</a></li>
             </ul>
         </div>
     </nav>
 
-    <main>
+    <main id="editableContent">
 
         <!-- ============================================= -->
-        <!-- 2. NUESTRO EQUIPO Y PROBLEMÁTICA              -->
+        <!-- 1. HERO INSTITUCIONAL                         -->
         <!-- ============================================= -->
-        <section class="section" id="equipo">
-            <div class="container">
-                <h2 class="section-title">Nuestro Equipo</h2>
-                <p class="section-lead">Estudiantes del curso de Comunicación Efectiva comprometidos con la investigación académica y la producción multimodal.</p>
+        <section class="hero" id="inicio">
+            <div class="hero-bg-deco" aria-hidden="true"></div>
+            <div class="container hero-layout">
+                <div class="hero-content reveal">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        <span>Grupo N.° 3 · Comunicación Efectiva · Ciclo 2026-I</span>
+                    </div>
 
-                <div class="team-grid">
+                    <div class="hero-logo-container uploader" data-type="image" aria-label="Subir logo institucional">
+                        <img src="uploads/Logo-autonoma.png" alt="Universidad Autónoma del Perú" class="hero-logo-img" loading="eager">
+                        <div class="upload-overlay"><span>📸 Cambiar Logo</span></div>
+                    </div>
 
-                    <article class="team-card">
-                        <div class="team-avatar">
-                            <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="32" r="14" fill="#2563eb"/><ellipse cx="40" cy="62" rx="22" ry="14" fill="#2563eb"/></svg>
-                        </div>
-                        <h3 class="team-name">Nicolás Ricci Ale</h3>
-                        <span class="team-role">Coordinador / Redactor</span>
-                    </article>
+                    <h1 class="hero-title editable" data-id="title">Portafolio Académico Multimodal</h1>
+                    <p class="hero-subtitle editable" data-id="subtitle">Una investigación del Grupo N.° 3 sobre la brecha digital y la ineficacia de la educación virtual en zonas rurales del Perú frente al <strong>ODS 4</strong>.</p>
 
-                    <article class="team-card">
-                        <div class="team-avatar">
-                            <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="32" r="14" fill="#0ea5e9"/><ellipse cx="40" cy="62" rx="22" ry="14" fill="#0ea5e9"/></svg>
-                        </div>
-                        <h3 class="team-name">Joel Salinas Vásquez</h3>
-                        <span class="team-role">Investigador / Locutor</span>
-                    </article>
+                    <div class="hero-metadata">
+                        <div class="meta-item editable" data-id="meta-1"><strong>Curso</strong>Comunicación Efectiva</div>
+                        <div class="meta-item editable" data-id="meta-2"><strong>Docente</strong>Eielson S. Valberde Espíritu</div>
+                        <div class="meta-item editable" data-id="meta-3"><strong>Fecha</strong>Mayo 2026</div>
+                    </div>
 
-                    <article class="team-card">
-                        <div class="team-avatar">
-                            <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="32" r="14" fill="#0ea5e9"/><ellipse cx="40" cy="62" rx="22" ry="14" fill="#0ea5e9"/></svg>
-                        </div>
-                        <h3 class="team-name">Johnson Mostajo Rojas</h3>
-                        <span class="team-role">Investigador / Editor técnico</span>
-                    </article>
-
-                    <article class="team-card">
-                        <div class="team-avatar">
-                            <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="32" r="14" fill="#0ea5e9"/><ellipse cx="40" cy="62" rx="22" ry="14" fill="#0ea5e9"/></svg>
-                        </div>
-                        <h3 class="team-name">Anderson Martínez Junes</h3>
-                        <span class="team-role">Redactor / Locutor</span>
-                    </article>
-
+                    <div class="hero-stats">
+                        <div class="stat-pill"><strong>4</strong><span>Integrantes</span></div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-pill"><strong>4</strong><span>Evidencias</span></div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-pill"><strong>1</strong><span>Problema real</span></div>
+                    </div>
                 </div>
 
-                <!-- Problemática Central -->
-                <div class="problematica-block">
-                    <h3 class="problematica-label">Problemática Central</h3>
-                    <p class="problematica-text">
-                        La ineficacia de la educación virtual en las zonas rurales de Lima frente al ODS 4 debido a las brechas de conectividad e infraestructura.
-                    </p>
+                <div class="hero-visual-wrap reveal reveal-delay-1">
+                    <div class="hero-visual uploader" data-type="image" aria-label="Subir imagen de portada">
+                        <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&amp;w=900&amp;auto=format&amp;fit=crop" alt="Educación rural" class="hero-img" loading="eager">
+                        <div class="upload-overlay"><span>📸 Subir Imagen</span></div>
+                    </div>
+                    <div class="hero-visual-accent" aria-hidden="true"></div>
+                    <div class="hero-visual-tag">
+                        <span class="dot"></span>
+                        <span>Zonas rurales · Perú</span>
+                    </div>
                 </div>
-
             </div>
+
+            <a href="#autores" class="scroll-indicator" aria-label="Continuar explorando">
+                <span class="scroll-mouse"><span class="scroll-wheel"></span></span>
+                <span class="scroll-text">Desliza</span>
+            </a>
         </section>
 
-
         <!-- ============================================= -->
-        <!-- 3. EVIDENCIAS DE APRENDIZAJE (REPOSITORIO)     -->
+        <!-- 2. AUTORES DEL PORTAFOLIO                     -->
         <!-- ============================================= -->
-        <section class="section section-alt" id="evidencias">
+        <section class="section section-alt" id="autores">
             <div class="container">
-                <h2 class="section-title">Evidencias de Aprendizaje</h2>
-                <p class="section-lead">Repositorio de producciones académicas desarrolladas durante el semestre 2026-I.</p>
+                <div class="section-header text-center reveal">
+                    <span class="section-eyebrow">01 · Equipo</span>
+                    <h2 class="section-title">Autores del Portafolio</h2>
+                    <p class="section-lead">Cuatro estudiantes, una pregunta común: ¿cómo se aprende donde no llega la señal?</p>
+                </div>
 
-                <div class="evidence-grid">
-
-                    <!-- Tarjeta 1: Vídeo Colaborativo -->
-                    <article class="evidence-card">
-                        <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 20px; border-radius: 4px; border: 1px solid var(--color-border);">
-                            <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="authors-grid">
+                    <!-- Autor 1 -->
+                    <article class="author-card editable-container reveal">
+                        <div class="author-photo uploader" data-type="image" aria-label="Subir foto">
+                            <img src="uploads/file-1779760128628-497803382.png" alt="Nicolás Ricci Ale" class="photo-img" loading="lazy">
+                            <div class="upload-overlay"><span>📸 Subir Foto 3:4</span></div>
                         </div>
-                        <h3 class="evidence-title">Vídeo Colaborativo</h3>
-                        <p class="evidence-desc">Cortometraje audiovisual de sensibilización sobre la brecha digital rural.</p>
-                        <a href="#" class="btn" onclick="alert('Enlace al vídeo pendiente de configurar.'); return false;">Ver documento</a>
+                        <div class="author-info">
+                            <h3 class="author-name editable" data-id="auth-n1">Nicolás Alfredo Ricci Ale</h3>
+                            <span class="author-role editable" data-id="auth-r1">Coordinador · Redactor</span>
+                            <div class="role-line"></div>
+                        </div>
                     </article>
 
-                    <!-- Tarjeta 2: Texto Argumentativo -->
-                    <article class="evidence-card">
-                        <div class="evidence-icon">
-                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M12 4h18l10 10v30a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
-                                <polyline points="30,4 30,14 40,14"/>
-                                <line x1="16" y1="22" x2="34" y2="22"/>
-                                <line x1="16" y1="28" x2="34" y2="28"/>
-                                <line x1="16" y1="34" x2="26" y2="34"/>
-                            </svg>
+                    <!-- Autor 2 -->
+                    <article class="author-card editable-container reveal reveal-delay-1">
+                        <div class="author-photo uploader" data-type="image" aria-label="Subir foto">
+                            <img src="uploads/file-1779760138195-744161771.png" alt="Joel Salinas Vásquez" class="photo-img" loading="lazy">
+                            <div class="upload-overlay"><span>📸 Subir Foto 3:4</span></div>
                         </div>
-                        <h3 class="evidence-title">Texto Argumentativo</h3>
-                        <p class="evidence-desc">Documento académico sustentando la ineficacia de la virtualidad sin infraestructura.</p>
-                        <a href="#" class="btn" onclick="alert('Enlace al documento pendiente de configurar.'); return false;">Ver documento</a>
+                        <div class="author-info">
+                            <h3 class="author-name editable" data-id="auth-n2">Joel Salinas Vásquez</h3>
+                            <span class="author-role editable" data-id="auth-r2">Investigador · Locutor</span>
+                            <div class="role-line"></div>
+                        </div>
                     </article>
 
-                    <!-- Tarjeta 3: Informe Académico -->
-                    <article class="evidence-card">
-                        <div class="evidence-icon">
-                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M8 6h24l8 8v28a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/>
-                                <polyline points="32,6 32,14 40,14"/>
-                                <circle cx="24" cy="28" r="8"/>
-                                <line x1="24" y1="24" x2="24" y2="28"/>
-                                <line x1="24" y1="28" x2="28" y2="28"/>
-                            </svg>
+                    <!-- Autor 3 -->
+                    <article class="author-card editable-container reveal reveal-delay-2">
+                        <div class="author-photo uploader" data-type="image" aria-label="Subir foto">
+                            <img src="uploads/file-1779760141999-469834137.png" alt="Johnson Mostajo Rojas" class="photo-img" loading="lazy">
+                            <div class="upload-overlay"><span>📸 Subir Foto 3:4</span></div>
                         </div>
-                        <h3 class="evidence-title">Informe Académico</h3>
-                        <p class="evidence-desc">Investigación previa sobre las consecuencias en el ODS 4.</p>
-                        <a href="#" class="btn" onclick="alert('Enlace al informe pendiente de configurar.'); return false;">Ver documento</a>
+                        <div class="author-info">
+                            <h3 class="author-name editable" data-id="auth-n3">Johnson Mostajo Rojas</h3>
+                            <span class="author-role editable" data-id="auth-r3">Investigador · Editor</span>
+                            <div class="role-line"></div>
+                        </div>
                     </article>
 
-                    <!-- Tarjeta 4: Podcast 'Señal Perdida' -->
-                    <article class="evidence-card">
-                        <div class="evidence-icon">
-                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M24 4a10 10 0 0 1 10 10v8a10 10 0 0 1-20 0v-8a10 10 0 0 1 10-10z"/>
-                                <path d="M4 20a20 20 0 0 0 40 0"/>
-                                <line x1="24" y1="36" x2="24" y2="44"/>
-                                <line x1="16" y1="44" x2="32" y2="44"/>
-                            </svg>
+                    <!-- Autor 4 -->
+                    <article class="author-card editable-container reveal reveal-delay-3">
+                        <div class="author-photo uploader" data-type="image" aria-label="Subir foto">
+                            <img src="uploads/file-1779760144980-657144002.png" alt="Anderson Martínez Junes" class="photo-img" loading="lazy">
+                            <div class="upload-overlay"><span>📸 Subir Foto 3:4</span></div>
                         </div>
-                        <h3 class="evidence-title">Podcast <em>Señal Perdida</em></h3>
-                        <p class="evidence-desc">Análisis crítico y contraste digital de narrativas en redes sociales vs. fuentes académicas.</p>
-                        <a href="#" class="btn" onclick="alert('Enlace al podcast pendiente de configurar.'); return false;">Escuchar podcast</a>
+                        <div class="author-info">
+                            <h3 class="author-name editable" data-id="auth-n4">Anderson Martínez Junes</h3>
+                            <span class="author-role editable" data-id="auth-r4">Redactor · Locutor</span>
+                            <div class="role-line"></div>
+                        </div>
                     </article>
-
                 </div>
             </div>
         </section>
 
-
         <!-- ============================================= -->
-        <!-- 4. REFLEXIÓN METACOGNITIVA FINAL               -->
+        <!-- 3. PROBLEMÁTICA INVESTIGADA                   -->
         <!-- ============================================= -->
-        <section class="section" id="reflexion">
+        <section class="section" id="problematica">
             <div class="container">
-                <h2 class="section-title">Reflexión Metacognitiva Final</h2>
-                <p class="section-lead">Balance integral de nuestra experiencia académica a lo largo del semestre.</p>
+                <div class="section-header text-center reveal">
+                    <span class="section-eyebrow">02 · Contexto</span>
+                    <h2 class="section-title">Problemática Investigada</h2>
+                    <p class="section-lead">Un fenómeno con tres aristas que se refuerzan entre sí.</p>
+                </div>
 
-                <div class="pillar-grid">
+                <div class="problem-stats reveal">
+                    <div class="stat-block">
+                        <div class="stat-number editable" data-id="stat-n1">21%</div>
+                        <div class="stat-label editable" data-id="stat-l1">Hogares rurales con internet fijo en el Perú</div>
+                        <div class="stat-source editable" data-id="stat-s1">INEI · Encuesta Nacional de Hogares</div>
+                    </div>
+                    <div class="stat-block stat-block-accent">
+                        <div class="stat-number editable" data-id="stat-n2">67%</div>
+                        <div class="stat-label editable" data-id="stat-l2">Estudiantes rurales con dificultades para clases virtuales</div>
+                        <div class="stat-source editable" data-id="stat-s2">MINEDU · Reporte de Educación</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-number editable" data-id="stat-n3">ODS 4</div>
+                        <div class="stat-label editable" data-id="stat-l3">Educación inclusiva, equitativa y de calidad</div>
+                        <div class="stat-source editable" data-id="stat-s3">Naciones Unidas · Agenda 2030</div>
+                    </div>
+                </div>
 
-                    <article class="pillar-card">
-                        <span class="pillar-number">01</span>
-                        <h3 class="pillar-title">Síntesis de aprendizajes significativos</h3>
-                        <p class="pillar-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia arcu nec diam fermentum, sed viverra lectus commodo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer efficitur sem nec libero malesuada, in ultrices nulla fringilla.</p>
+                <div class="problem-layout reveal">
+                    <div class="problem-statement-box">
+                        <div class="problem-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                        </div>
+                        <p class="editable" data-id="prob-text">“La ineficacia de la educación virtual en las zonas rurales de Lima frente al ODS 4 se explica por profundas brechas de conectividad, infraestructura eléctrica y exclusión social.”</p>
+                    </div>
+
+                    <div class="problem-chips">
+                        <div class="chip">
+                            <span class="chip-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+                            </span>
+                            <span class="chip-text editable" data-id="chip-1">Conectividad limitada</span>
+                        </div>
+                        <div class="chip">
+                            <span class="chip-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                            </span>
+                            <span class="chip-text editable" data-id="chip-2">Infraestructura insuficiente</span>
+                        </div>
+                        <div class="chip">
+                            <span class="chip-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            </span>
+                            <span class="chip-text editable" data-id="chip-3">Exclusión educativa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- 4. RUTA DEL TRABAJO REALIZADO                 -->
+        <!-- ============================================= -->
+        <section class="section section-alt" id="ruta">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="section-eyebrow">03 · Proceso</span>
+                    <h2 class="section-title">Ruta del Trabajo Realizado</h2>
+                    <p class="section-lead">De la pregunta inicial al producto final, en cuatro etapas conectadas.</p>
+                </div>
+
+                <div class="timeline-horizontal">
+                    <div class="timeline-line" aria-hidden="true"></div>
+
+                    <!-- Paso 1 -->
+                    <div class="timeline-item editable-container reveal">
+                        <div class="timeline-marker">01</div>
+                        <div class="timeline-date editable" data-id="time-fecha1">Marzo 2026</div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon">🔍</div>
+                            <h3 class="timeline-title editable" data-id="time-t1">Investigación Inicial</h3>
+                            <p class="timeline-desc editable" data-id="time-d1">Delimitación del problema, búsqueda de fuentes confiables y construcción del marco teórico.</p>
+                        </div>
+                    </div>
+
+                    <!-- Paso 2 -->
+                    <div class="timeline-item editable-container reveal reveal-delay-1">
+                        <div class="timeline-marker">02</div>
+                        <div class="timeline-date editable" data-id="time-fecha2">Abril 2026</div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon">🎥</div>
+                            <h3 class="timeline-title editable" data-id="time-t2">Vídeo Colaborativo</h3>
+                            <p class="timeline-desc editable" data-id="time-d2">Trabajo de campo, entrevistas y edición de un documental breve con testimonios reales.</p>
+                        </div>
+                    </div>
+
+                    <!-- Paso 3 -->
+                    <div class="timeline-item editable-container reveal reveal-delay-2">
+                        <div class="timeline-marker">03</div>
+                        <div class="timeline-date editable" data-id="time-fecha3">Abril – Mayo 2026</div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon">📄</div>
+                            <h3 class="timeline-title editable" data-id="time-t3">Texto Argumentativo</h3>
+                            <p class="timeline-desc editable" data-id="time-d3">Ensayo final que articula nuestra postura crítica frente a la exclusión digital.</p>
+                        </div>
+                    </div>
+
+                    <!-- Paso 4 -->
+                    <div class="timeline-item editable-container reveal reveal-delay-3">
+                        <div class="timeline-marker">04</div>
+                        <div class="timeline-date editable" data-id="time-fecha4">Mayo 2026</div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon">🎙️</div>
+                            <h3 class="timeline-title editable" data-id="time-t4">Podcast "Señal Perdida"</h3>
+                            <p class="timeline-desc editable" data-id="time-d4">Conversatorio sonoro donde las voces del equipo proponen rutas de solución.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- 5. EVIDENCIAS DE APRENDIZAJE                  -->
+        <!-- ============================================= -->
+        <section class="section" id="evidencias">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="section-eyebrow">04 · Productos</span>
+                    <h2 class="section-title">Evidencias de Aprendizaje</h2>
+                    <p class="section-lead">Cuatro formatos para una misma historia: ver, leer, argumentar y escuchar.</p>
+                </div>
+
+                <div class="evidence-stack">
+
+                    <!-- Evidencia 01 -->
+                    <article class="evidence-row reveal">
+                        <div class="evidence-content">
+                            <div class="evidence-meta">
+                                <div class="evidence-number">01</div>
+                                <span class="evi-badge evi-badge-video">📺 Video · YouTube</span>
+                            </div>
+                            <h3 class="evidence-title editable" data-id="ev-t1">Vídeo colaborativo</h3>
+                            <p class="evidence-desc editable" data-id="ev-d1">Documentamos la realidad de la brecha digital en zonas rurales a través de entrevistas, recorridos y testimonios que evidencian los desafíos que enfrentan estudiantes y docentes.</p>
+                            <a href="https://youtu.be/x4NnzTr9MP8" target="_blank" rel="noopener" class="btn btn-primary">Ver en YouTube
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                            </a>
+                        </div>
+                        <div class="evidence-visual">
+                            <div class="video-embed">
+                                <iframe src="https://www.youtube.com/embed/x4NnzTr9MP8" allowfullscreen="" loading="lazy" title="Vídeo colaborativo - Brecha Digital Rural"></iframe>
+                            </div>
+                        </div>
                     </article>
 
-                    <article class="pillar-card">
-                        <span class="pillar-number">02</span>
-                        <h3 class="pillar-title">Autoevaluación de fortalezas y debilidades grupales</h3>
-                        <p class="pillar-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pretium orci vel libero volutpat, eget pellentesque odio euismod. Praesent at tortor sit amet sapien sollicitudin facilisis. Nullam tincidunt metus et arcu sagittis, vel consequat purus molestie.</p>
+                    <!-- Evidencia 02 -->
+                    <article class="evidence-row evidence-row-reverse reveal">
+                        <div class="evidence-content">
+                            <div class="evidence-meta">
+                                <div class="evidence-number">02</div>
+                                <span class="evi-badge evi-badge-pdf">📄 PDF · Informe</span>
+                            </div>
+                            <h3 class="evidence-title editable" data-id="ev-t2">Informe académico</h3>
+                            <p class="evidence-desc editable" data-id="ev-d2">Análisis detallado de la problemática, metodología aplicada, hallazgos y propuestas de solución desde una perspectiva académica.</p>
+                            <button class="btn btn-primary" onclick="openModal('modal-informe')">Ver informe
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                            </button>
+                            <p class="evidence-note">Se abre en una ventana emergente.</p>
+                        </div>
+                        <div class="evidence-visual evidence-mockup uploader" data-type="image">
+                            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Portada del informe" class="mockup-img" loading="lazy">
+                            <div class="upload-overlay"><span>📸 Cambiar Portada</span></div>
+                        </div>
                     </article>
 
-                    <article class="pillar-card">
-                        <span class="pillar-number">03</span>
-                        <h3 class="pillar-title">Transferencia de competencias a la vida profesional y universitaria</h3>
-                        <p class="pillar-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit enim at velit convallis, eu cursus nisl interdum. Sed scelerisque suscipit felis, at posuere nisi blandit id. Aliquam erat volutpat. Donec dictum dolor non tortor aliquet vehicula.</p>
+                    <!-- Evidencia 03 -->
+                    <article class="evidence-row reveal">
+                        <div class="evidence-content">
+                            <div class="evidence-meta">
+                                <div class="evidence-number">03</div>
+                                <span class="evi-badge evi-badge-pdf">📄 PDF · Ensayo</span>
+                            </div>
+                            <h3 class="evidence-title editable" data-id="ev-t3">Texto argumentativo final</h3>
+                            <p class="evidence-desc editable" data-id="ev-d3">Ensayo argumentativo que presenta nuestra postura frente a la exclusión digital y propone acciones concretas para una educación inclusiva y equitativa.</p>
+                            <button class="btn btn-primary" onclick="openModal('modal-texto-arg')">Ver texto argumentativo
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                            </button>
+                            <p class="evidence-note">Se abre en una ventana emergente.</p>
+                        </div>
+                        <div class="evidence-visual evidence-mockup uploader" data-type="image">
+                            <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Portada del ensayo" class="mockup-img" loading="lazy">
+                            <div class="upload-overlay"><span>📸 Cambiar Portada</span></div>
+                        </div>
                     </article>
 
-                    <article class="pillar-card">
-                        <span class="pillar-number">04</span>
-                        <h3 class="pillar-title">Agradecimiento a la cátedra</h3>
-                        <p class="pillar-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dignissim nisi vitae neque ultrices, a pretium magna faucibus. Quisque congue, magna eget gravida egestas, velit felis cursus tortor, ac elementum mi turpis nec risus.</p>
+                    <!-- Evidencia 04 -->
+                    <article class="evidence-row evidence-row-reverse reveal">
+                        <div class="evidence-content">
+                            <div class="evidence-meta">
+                                <div class="evidence-number">04</div>
+                                <span class="evi-badge evi-badge-audio">🎧 Audio · Podcast</span>
+                            </div>
+                            <h3 class="evidence-title editable" data-id="ev-t4">Podcast "Señal Perdida"</h3>
+                            <p class="evidence-desc editable" data-id="ev-d4">Conversamos sobre los retos de la conectividad en zonas rurales, las experiencias recogidas y las soluciones posibles desde la voz de la comunidad.</p>
+                            <div class="podcast-player">
+                                <audio controls="" preload="metadata">
+                                    <source src="uploads/podcast.mp3" type="audio/mpeg">
+                                    Tu navegador no soporta el elemento de audio.
+                                </audio>
+                            </div>
+                        </div>
+                        <div class="evidence-visual podcast-visual uploader" data-type="image">
+                            <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Señal Perdida Podcast" class="mockup-img" loading="lazy">
+                            <div class="podcast-overlay-text">SEÑAL PERDIDA</div>
+                            <div class="upload-overlay"><span>📸 Cambiar Portada</span></div>
+                        </div>
                     </article>
 
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- 6. REFLEXIÓN FINAL                            -->
+        <!-- ============================================= -->
+        <section class="section section-alt" id="reflexion">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="section-eyebrow">05 · Cierre</span>
+                    <h2 class="section-title">Reflexión Final</h2>
+                    <p class="section-lead">Lo que nos deja el proceso, en cuatro miradas.</p>
+                </div>
+
+                <div class="reflection-stack">
+
+                    <!-- 3.1 Síntesis -->
+                    <div class="reflection-row reveal">
+                        <div class="reflection-number">3.1</div>
+                        <div class="reflection-content">
+                            <div class="reflection-header">
+                                <div class="reflection-icon">✨</div>
+                                <h3>Síntesis</h3>
+                            </div>
+                            <h4 class="reflection-subtitle">Tres aprendizajes significativos</h4>
+                            <ul class="reflection-list editable" data-id="ref-1">
+                                <li>Comprendimos que la brecha digital es también una brecha de oportunidades y derechos.</li>
+                                <li>Reconocimos el impacto real de la exclusión digital en el aprendizaje y el desarrollo.</li>
+                                <li>Aprendimos a trabajar en equipo, comunicarnos y construir soluciones desde la investigación.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 3.2 Autoevaluación -->
+                    <div class="reflection-row reveal">
+                        <div class="reflection-number">3.2</div>
+                        <div class="reflection-content">
+                            <div class="reflection-header">
+                                <div class="reflection-icon">📈</div>
+                                <h3>Autoevaluación</h3>
+                            </div>
+                            <div class="eval-split">
+                                <div class="eval-box eval-strengths">
+                                    <h4>Fortalezas consolidadas</h4>
+                                    <ul class="editable" data-id="ref-2a">
+                                        <li>Compromiso y responsabilidad en cada etapa.</li>
+                                        <li>Buena organización y comunicación del equipo.</li>
+                                        <li>Adaptación a formatos multimodales.</li>
+                                    </ul>
+                                </div>
+                                <div class="eval-box eval-weaknesses">
+                                    <h4>Aspectos de mejora</h4>
+                                    <ul class="editable" data-id="ref-2b">
+                                        <li>Profundizar más en el análisis de fuentes y datos.</li>
+                                        <li>Gestionar mejor los tiempos del proyecto.</li>
+                                        <li>Mejorar la seguridad y fluidez al exponer.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3.3 Transferencia -->
+                    <div class="reflection-row reveal">
+                        <div class="reflection-number">3.3</div>
+                        <div class="reflection-content">
+                            <div class="reflection-header">
+                                <div class="reflection-icon">🚀</div>
+                                <h3>Transferencia</h3>
+                            </div>
+                            <h4 class="reflection-subtitle">Aplicación en la vida universitaria y profesional</h4>
+                            <div class="transfer-grid">
+                                <div class="transfer-item editable" data-id="ref-3a">
+                                    <div class="transfer-icon">🏛️</div>
+                                    <p>En la universidad, aplicaremos el pensamiento crítico y la investigación para generar propuestas mejor sustentadas.</p>
+                                </div>
+                                <div class="transfer-item editable" data-id="ref-3b">
+                                    <div class="transfer-icon">💼</div>
+                                    <p>En nuestra vida profesional, promoveremos soluciones tecnológicas inclusivas, sostenibles y orientadas a necesidades reales.</p>
+                                </div>
+                                <div class="transfer-item editable" data-id="ref-3c">
+                                    <div class="transfer-icon">🌍</div>
+                                    <p>En nuestra comunidad, seguiremos siendo agentes de cambio y voz para quienes no son escuchados.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3.4 Mensaje Final -->
+                    <div class="reflection-row reflection-highlight reveal">
+                        <div class="reflection-pattern" aria-hidden="true"></div>
+                        <div class="reflection-number">3.4</div>
+                        <div class="reflection-content">
+                            <div class="reflection-header">
+                                <h3>Mensaje Final</h3>
+                            </div>
+                            <blockquote class="final-quote editable" data-id="ref-4a">
+                                “La educación digital no es un privilegio, es un derecho. Que la señal no sea el límite, sino el inicio de un futuro con igualdad.”
+                            </blockquote>
+                            <p class="final-ack editable" data-id="ref-4b">
+                                Agradecemos al docente Eielson Samir Valberde Espíritu por acompañar nuestro proceso de aprendizaje durante el ciclo. Este portafolio representa el esfuerzo del Grupo N.° 3 por comprender una problemática social real y comunicarla desde distintos formatos académicos y multimodales.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- 7. REFERENCIAS BIBLIOGRÁFICAS                 -->
+        <!-- ============================================= -->
+        <section class="section" id="referencias">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <span class="section-eyebrow">06 · Bibliografía</span>
+                    <h2 class="section-title">Referencias</h2>
+                    <p class="section-lead">Fuentes que sustentan nuestra investigación, en formato APA.</p>
+                </div>
+
+                <div class="references-box editable reveal" data-id="refs">
+                    <div class="ref-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg>
+                    </div>
+                    <p class="apa-reference">UNESCO. (2023). <em>La tecnología en la educación: un instrumento para alcanzar la meta 4</em>. Ediciones UNESCO. <a href="#" target="_blank" rel="noopener">Enlace</a></p>
+                    <p class="apa-reference">CEPAL. (2022). <em>La digitalización en América Latina y el Caribe: oportunidades y desafíos</em>. Naciones Unidas. <a href="#" target="_blank" rel="noopener">Enlace</a></p>
+                    <p class="apa-reference">MINEDU. (2023). <em>Brecha digital y desafíos de conectividad en el Perú</em>. Ministerio de Educación.</p>
+                    <p class="apa-reference">Banco Mundial. (2021). <em>The State of Broadband 2021: Improving broadband access to drive digital transformation</em>.</p>
+                    <p class="apa-reference">Rojas, M. (2020). Educación rural y brecha digital en el Perú: análisis y propuestas. <em>Revista Educativa, 34</em>(1), 55–78.</p>
                 </div>
             </div>
         </section>
@@ -213,17 +520,62 @@
     </main>
 
     <!-- ============================================= -->
-    <!-- 5. FOOTER                                      -->
+    <!-- FOOTER                                        -->
     <!-- ============================================= -->
     <footer class="main-footer">
-        <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
-            <p style="font-weight: 700; color: var(--color-accent); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">Universidad Autónoma del Perú</p>
-            <p style="color: #cbd5e1;">&copy; 2026 Grupo N° 3 &mdash; Asignatura: Comunicación Efectiva.</p>
-            <p style="font-size: 0.85rem; color: #94a3b8;">Desarrollado para fines académicos. Lima, Perú.</p>
+        <div class="container footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="footer-logo">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg>
+                    <span>PAM · Grupo N.° 3</span>
+                </div>
+                <p>Portafolio Académico Multimodal desarrollado en el curso de Comunicación Efectiva.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Curso</h4>
+                <p>Comunicación Efectiva</p>
+                <p>Ciclo 2026-I</p>
+            </div>
+            <div class="footer-col">
+                <h4>Universidad</h4>
+                <p>Universidad Autónoma del Perú</p>
+                <p>Lima, Perú</p>
+            </div>
+            <div class="footer-col">
+                <h4>Equipo</h4>
+                <p>Nicolás Ricci · Joel Salinas</p>
+                <p>Johnson Mostajo · Anderson Martínez</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 · Grupo N.° 3 · Comunicación Efectiva · Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Lógica mínima de navegación -->
+    <!-- ============================================= -->
+    <!-- MODALES DE EVIDENCIAS                         -->
+    <!-- ============================================= -->
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+
+    <div class="modal" id="modal-informe">
+        <div class="modal-content modal-pdf">
+            <button class="modal-close" aria-label="Cerrar">×</button>
+            <h3 class="modal-title">Informe académico</h3>
+            <iframe src="uploads/informe.pdf" title="Informe Académico"></iframe>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-texto-arg">
+        <div class="modal-content modal-pdf">
+            <button class="modal-close" aria-label="Cerrar">×</button>
+            <h3 class="modal-title">Texto argumentativo final</h3>
+            <iframe src="uploads/ensayo.pdf" title="Texto Argumentativo"></iframe>
+        </div>
+    </div>
+
     <script src="js/main.js"></script>
-</body>
-</html>
+
+
+</body></html>

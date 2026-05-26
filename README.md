@@ -1,51 +1,76 @@
-# Portafolio Académico Multimodal 🎓
+# Portafolio Académico Multimodal 🎓 (Storytelling Premium Edition)
 
-Este repositorio contiene el código fuente del **Portafolio Académico Multimodal** desarrollado para la asignatura de **Comunicación Efectiva** (Ciclo 2026-I) en la **Universidad Autónoma del Perú**.
+Este repositorio contiene el código fuente del **Portafolio Académico Multimodal** desarrollado para la asignatura de **Comunicación Efectiva** (Ciclo 2026-I) en la **Universidad Autónoma del Perú**. 
+
+El proyecto ha sido rediseñado recientemente como una **Landing Page de Storytelling** de estilo académico premium. No es un simple repositorio de trabajos, sino que narra una historia visual fluida (de arriba hacia abajo) sobre la investigación de la brecha digital en el Perú, utilizando paletas institucionales, modales interactivos y mucho espacio en blanco.
 
 🌍 **Enlace al sitio en vivo:** [https://nicolas-ricci.github.io/TAREA_comunicacion_efectiva/](https://nicolas-ricci.github.io/TAREA_comunicacion_efectiva/)
 
 ---
 
 ## 📌 Problemática Central
-La ineficacia de la educación virtual en las zonas rurales de Lima frente al Objetivo de Desarrollo Sostenible (ODS) N° 4, debido a las profundas brechas de conectividad e infraestructura.
+> *"La ineficacia de la educación virtual en las zonas rurales de Lima frente al Objetivo de Desarrollo Sostenible 4 (ODS 4) se explica por profundas brechas de conectividad, infraestructura eléctrica y exclusión social."*
 
 ## 👥 Equipo de Trabajo (Grupo 3)
 *   **Nicolás Ricci Ale** - Coordinador / Redactor
 *   **Joel Salinas Vásquez** - Investigador / Locutor
-*   **Johnson Mostajo Rojas** - Investigador / Editor técnico
+*   **Johnson Mostajo Rojas** - Investigador / Editor Técnico
 *   **Anderson Martínez Junes** - Redactor / Locutor
+*   **Docente:** Eielson Samir Valberde Espíritu
 
-## 📂 Estructura de Evidencias
-El portafolio recopila cuatro productos académicos clave desarrollados a lo largo del semestre:
-1.  **Vídeo Colaborativo:** Cortometraje de sensibilización sobre la brecha digital rural.
-2.  **Texto Argumentativo:** Documento sustentando la ineficacia de la virtualidad sin infraestructura.
-3.  **Informe Académico:** Investigación previa sobre las consecuencias en la educación.
-4.  **Podcast "Señal Perdida":** Análisis crítico de narrativas en redes sociales frente a fuentes formales.
+## 📂 Estructura Narrativa y Evidencias
+La página está dividida en secciones estratégicas apiladas para contar una historia:
+
+1. **Hero Institucional:** Portada a doble columna con el título, logo de la universidad (`uploads/Logo-autonoma.png`) y datos del equipo.
+2. **Autores del Portafolio:** Cuadrícula de tarjetas con fotografías (formato 3:4).
+3. **Problemática Investigada:** Declaración central apoyada con *chips* descriptivos e íconos.
+4. **Ruta del Trabajo (Timeline):** Línea de tiempo cronológica horizontal.
+5. **Evidencias de Aprendizaje (Bloques Verticales):**
+   - **01. Vídeo Colaborativo:** Documental embebido directamente desde YouTube.
+   - **02. Informe Académico:** Documento técnico visible mediante un modal dinámico de PDF (`uploads/informe.pdf`).
+   - **03. Texto Argumentativo:** Ensayo crítico integrado en la narrativa visual, con su propio modal de PDF (`uploads/ensayo.pdf`).
+   - **04. Podcast "Señal Perdida":** Reproductor de audio HTML5 incrustado directamente (`uploads/podcast.mp3`).
+6. **Reflexión Final:** Diseño en grilla y listas para Síntesis, Autoevaluación, Transferencia Profesional y un Mensaje Final de impacto.
+7. **Referencias Bibliográficas:** Formato APA con sangría francesa.
 
 ---
 
 ## 🛠️ Tecnologías Utilizadas
 
-Este proyecto es una *Single Page Application* (SPA) estática construida desde cero bajo un enfoque minimalista e institucional, garantizando un rendimiento óptimo y compatibilidad universal.
+El proyecto combina un Frontend limpio y de diseño premium con un **Micro-CMS Local** impulsado por Node.js para facilitar la edición de contenido por parte del equipo.
 
-*   **HTML5 Semántico:** Para una estructura accesible y correcta jerarquía de la información.
-*   **CSS3 Vanilla:** Implementación de un diseño *responsive* utilizando *CSS Grid* y *Flexbox*, junto con variables personalizadas para la paleta de colores institucionales (Guinda y Dorado). No se utilizaron frameworks pesados.
-*   **JavaScript (ES6):** Lógica ligera para la interacción del menú de navegación móvil y desplazamiento suave (*smooth scroll*).
+*   **HTML5 / CSS3 Vanilla:** Diseño responsivo ultra-premium, paleta cromática sobria (Azul marino, Guinda, Dorado) y maquetación mediante *CSS Grid/Flexbox*. Sin frameworks, para máximo control.
+*   **JavaScript (ES6):** Lógica para modales interactivos de PDF y el sistema de guardado y carga de archivos locales.
+*   **Node.js & Express:** (Backend Local). Un micro-servidor (`server.js`) diseñado exclusivamente para ejecutarse en la computadora de los autores, permitiendo sobrescribir textos (`index.html`) y guardar fotografías físicamente en el disco.
+*   **Multer:** Librería para procesar y guardar las imágenes subidas desde el "Modo Edición" en la carpeta `/uploads`.
 
-## 🚀 Despliegue y Uso Local
+---
 
-El proyecto está diseñado para funcionar en cualquier entorno sin dependencias de servidor complejas.
+## 🚀 Despliegue y Uso Local (Modo CMS)
 
-### Ver el proyecto localmente
+A diferencia de una web estática común, este proyecto incluye un botón mágico de **"Editar Contenido"**. Para aprovechar la subida de fotos y el guardado automático de textos, debes levantarlo usando Node.js.
+
+### Requisitos previos
+- Tener [Node.js](https://nodejs.org/) instalado en tu computadora.
+
+### Pasos para editar el proyecto localmente
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/Nicolas-Ricci/TAREA_comunicacion_efectiva.git
+   cd TAREA_comunicacion_efectiva
    ```
-2. Abre el archivo `index.html` directamente en tu navegador web preferido, o levanta un servidor local básico:
+2. Instala las dependencias del servidor local (solo la primera vez):
    ```bash
-   python -m http.server 8000
+   npm install
    ```
-   Y visita `http://localhost:8000`.
+3. Levanta el servidor local (El motor del CMS):
+   ```bash
+   node server.js
+   ```
+4. Abre `http://localhost:3000` en tu navegador.
+5. Haz clic en el botón flotante **"Editar Contenido"** (abajo a la izquierda). Podrás modificar textos sobre la marcha o subir fotografías de autores haciendo clic en sus recuadros.
+6. Haz clic en **"Guardar Cambios"** (botón verde). Tu archivo `index.html` se actualizará físicamente en el disco.
+7. **Para archivos pesados (PDFs, Audio y el Logo):** Cópialos manualmente a la carpeta `/uploads/` con los nombres: `informe.pdf`, `ensayo.pdf`, `podcast.mp3`, `Logo-autonoma.png`.
 
 ### Despliegue en GitHub Pages
-La rama `main` de este repositorio está conectada a GitHub Pages, por lo que cualquier actualización (como el reemplazo de los enlaces de las evidencias o videos) se reflejará automáticamente en la web pública.
+Una vez que termines de editar todo en tu `localhost:3000` y hayas guardado los cambios, simplemente haz un `git commit` y un `git push` a la rama `main`. El sitio estático se compilará y actualizará automáticamente en GitHub Pages, listo para ser entregado a tu profesor.
