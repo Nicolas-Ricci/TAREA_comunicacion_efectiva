@@ -40,9 +40,25 @@ La página está dividida en secciones estratégicas apiladas para contar una hi
 El proyecto combina un Frontend limpio y de diseño premium con un **Micro-CMS Local** impulsado por Node.js para facilitar la edición de contenido por parte del equipo.
 
 *   **HTML5 / CSS3 Vanilla:** Diseño responsivo ultra-premium, paleta cromática sobria (Azul marino, Guinda, Dorado) y maquetación mediante *CSS Grid/Flexbox*. Sin frameworks, para máximo control.
-*   **JavaScript (ES6):** Lógica para modales interactivos de PDF y el sistema de guardado y carga de archivos locales.
+*   **JavaScript (ES6):** Lógica para modales interactivos de PDF, sistema de guardado y carga de archivos locales.
 *   **Node.js & Express:** (Backend Local). Un micro-servidor (`server.js`) diseñado exclusivamente para ejecutarse en la computadora de los autores, permitiendo sobrescribir textos (`index.html`) y guardar fotografías físicamente en el disco.
 *   **Multer:** Librería para procesar y guardar las imágenes subidas desde el "Modo Edición" en la carpeta `/uploads`.
+
+---
+
+## ✨ Mejoras incorporadas para la presentación
+
+El portafolio incluye funcionalidades diseñadas específicamente para facilitar la exposición en clase:
+
+| Mejora | Descripción |
+|---|---|
+| 🎬 **Modal de bienvenida** | Al cargar la página aparece un overlay con los datos del grupo y el tema. Botón "Comenzar recorrido" para iniciar. |
+| 📍 **Timelapse vertical** | Barra lateral izquierda con 7 dots numerados que se iluminan al scrollear. Clic en cada uno para saltar a esa sección. |
+| 📱 **QR del sitio** | Código QR siempre visible en la esquina inferior derecha. Los compañeros lo escanean y siguen la presentación en su celular. |
+| 🎓 **Pantalla Gracias** | Botón "🎬 Gracias" en la esquina inferior derecha. Al hacer clic, muestra una pantalla de cierre profesional con "Volver al inicio". |
+| ⌨️ **Atajos de teclado** | `1`-`7` → ir a sección, `G` → mostrar Gracias, `Esc` → cerrar, `?` → ayuda en pantalla. |
+| 📱 **Responsive** | En móvil se ocultan el timelapse, QR y botón Gracias. Los autores se muestran en una fila. |
+| ⚡ **Optimizado** | Scroll con posiciones cacheadas (sin reflows), CSS sin código muerto, `loading="lazy"` en PDFs e imágenes, preload de estilos. |
 
 ---
 
