@@ -149,35 +149,33 @@ document.addEventListener('DOMContentLoaded', () => {
         // En producción (GitHub Pages) — ocultar completamente los botones de edición
         if (editBtn) editBtn.remove();
         if (saveBtn) saveBtn.remove();
-        return;
-    }
+    } else {
+        // En local — mostrar el botón "Editar Contenido"
+        if (editBtn) editBtn.classList.remove('hidden');
 
-    // En local — mostrar el botón "Editar Contenido"
-    if (editBtn) editBtn.classList.remove('hidden');
+        async function uploadFile(file) {
+            const formData = new FormData();
+            formData.append('file', file);
 
-    async function uploadFile(file) {
-        const formData = new FormData();
-        formData.append('file', file);
-
-        try {
-            const response = await fetch('/upload', {
-                method: 'POST',
-                body: formData
-            });
-            const data = await response.json();
-            if (data.success) {
-                return data.filePath;
-            } else {
-                throw new Error(data.message || 'Error al subir');
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await response.json();
+                if (data.success) {
+                    return data.filePath;
+                } else {
+                    throw new Error(data.message || 'Error al subir');
+                }
+            } catch (error) {
+                console.error(error);
+                alert("Error al subir el archivo. ¿Está corriendo el servidor (node server.js)?");
+                return null;
             }
-        } catch (error) {
-            console.error(error);
-            alert("Error al subir el archivo. ¿Está corriendo el servidor (node server.js)?");
-            return null;
         }
-    }
 
-    if (editBtn && saveBtn) {
+        if (editBtn && saveBtn) {
         editBtn.addEventListener('click', () => {
             isEditing = true;
 
@@ -284,6 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    } // fin del else (isLocalCMS)
 
     /* ==========================================================
        7. BIENVENIDA — overlay independiente
