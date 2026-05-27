@@ -117,14 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ==========================================================
        5. BOTÓN "VOLVER ARRIBA" (creado dinámicamente)
        ========================================================== */
-    const backToTop = document.createElement('button');
-    backToTop.className = 'back-to-top';
-    backToTop.setAttribute('aria-label', 'Volver arriba');
-    backToTop.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>';
-    backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    document.body.appendChild(backToTop);
+    // Eliminado: botón "Volver arriba" reemplazado por el botón Gracias + timelapse
 
     // Scroll listener combinado (progreso + botón volver arriba)
     let ticking = false;
@@ -136,11 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
                 progressBar.style.width = progress + '%';
 
-                if (scrollTop > 600) {
-                    backToTop.classList.add('visible');
-                } else {
-                    backToTop.classList.remove('visible');
-                }
                 ticking = false;
             });
             ticking = true;
@@ -296,4 +284,208 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    /* ==========================================================
+       7. BIENVENIDA — overlay independiente
+       ========================================================== */
+    const welcomeOverlay = document.getElementById('welcomeOverlay');
+    const welcomeBtn = document.getElementById('welcomeBtn');
+
+    if (welcomeOverlay) {
+        welcomeOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function cerrarBienvenida() {
+        if (welcomeOverlay) welcomeOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    if (welcomeBtn) {
+        welcomeBtn.addEventListener('click', cerrarBienvenida);
+    }
+
+    /* ==========================================================
+       8. TIMELAPSE VERTICAL — indicador + navegación por clic
+       ========================================================== */
+    const vtDots = document.querySelectorAll('.vt-dot');
+
+    const sections = [
+        { id: 'inicio',      num: '01', label: 'Inicio' },
+        { id: 'autores',     num: '02', label: 'Autores' },
+        { id: 'problematica',num: '03', label: 'Problemática' },
+        { id: 'ruta',        num: '04', label: 'Proceso' },
+        { id: 'evidencias',  num: '05', label: 'Evidencias' },
+        { id: 'reflexion',   num: '06', label: 'Reflexión' },
+        { id: 'referencias', num: '07', label: 'Referencias' },
+    ];
+
+    // Cache de posiciones para evitar reflow en cada scroll
+    let sectionBounds = sections.map(s => ({ top: 0, bottom: 0 }));
+    function cacheSectionBounds() {
+        sections.forEach((sec, i) => {
+            const el = document.getElementById(sec.id);
+            if (el) {
+                sectionBounds[i].top = el.offsetTop;
+                sectionBounds[i].bottom = el.offsetTop + el.offsetHeight;
+            }
+        });
+    }
+    cacheSectionBounds();
+    window.addEventListener('resize', cacheSectionBounds, { passive: true });
+
+    let tickingTL = false;
+    window.addEventListener('scroll', () => {
+        if (!tickingTL) {
+            window.requestAnimationFrame(() => {
+                const scrollCenter = window.scrollY + window.innerHeight / 2;
+
+                for (let i = 0; i < sections.length; i++) {
+                    const bounds = sectionBounds[i];
+                    if (scrollCenter >= bounds.top && scrollCenter < bounds.bottom) {
+                        vtDots.forEach(d => d.classList.remove('active'));
+                        if (vtDots[i]) vtDots[i].classList.add('active');
+                        break;
+                    }
+                }
+                tickingTL = false;
+            });
+            tickingTL = true;
+        }
+    }, { passive: true });
+
+    // Clic en cada dot → saltar a la sección
+    const headerOffset2 = 88;
+    vtDots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const targetId = dot.getAttribute('data-section');
+            const targetEl = document.getElementById(targetId);
+            if (targetEl) {
+                const pos = targetEl.getBoundingClientRect().top + window.pageYOffset - headerOffset2;
+                window.scrollTo({ top: pos, behavior: 'smooth' });
+            }
+        });
+    });
+
+    /* ==========================================================
+       9. PANTALLA DE CIERRE "GRACIAS"
+       ========================================================== */
+    const graciasBtn = document.getElementById('graciasBtn');
+    const graciasOverlay = document.getElementById('graciasOverlay');
+    const graciasCloseBtn = document.getElementById('graciasCloseBtn');
+    const graciasCerrarBtn = document.getElementById('graciasCerrarBtn');
+    const volverInicioBtn = document.getElementById('volverInicioBtn');
+
+    function openGracias() {
+        if (graciasOverlay) graciasOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeGracias() {
+        if (graciasOverlay) graciasOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function volverAlInicio() {
+        closeGracias();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    if (graciasBtn) graciasBtn.addEventListener('click', openGracias);
+    if (graciasCloseBtn) graciasCloseBtn.addEventListener('click', closeGracias);
+    if (graciasCerrarBtn) graciasCerrarBtn.addEventListener('click', closeGracias);
+    if (volverInicioBtn) volverInicioBtn.addEventListener('click', volverAlInicio);
+    if (graciasOverlay) {
+        graciasOverlay.addEventListener('click', (e) => {
+            if (e.target === graciasOverlay) closeGracias();
+        });
+    }
+
+    /* ==========================================================
+       10. QR BADGE — clic abre el sitio en nueva pestaña
+       ========================================================== */
+    const qrBadge = document.getElementById('qrBadge');
+    if (qrBadge) {
+        qrBadge.addEventListener('click', () => {
+            window.open('https://nicolas-ricci.github.io/TAREA_comunicacion_efectiva/', '_blank');
+        });
+    }
+
+    /* ==========================================================
+       11. ATAJOS DE TECLADO
+       ========================================================== */
+    let kbdHintTimer = null;
+
+    function showKbdHint(text, durationMs = 2000) {
+        let hint = document.getElementById('kbdHint');
+        if (!hint) {
+            hint = document.createElement('div');
+            hint.id = 'kbdHint';
+            hint.className = 'kbd-hint';
+            document.body.appendChild(hint);
+        }
+        hint.innerHTML = text;
+        hint.classList.add('visible');
+
+        if (kbdHintTimer) clearTimeout(kbdHintTimer);
+        kbdHintTimer = setTimeout(() => {
+            hint.classList.remove('visible');
+        }, durationMs);
+    }
+
+    document.addEventListener('keydown', (e) => {
+        // Ignorar si el usuario está escribiendo en un input/editable
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
+
+        const key = e.key;
+
+        // 1-7 — ir a sección
+        const sectionKeys = {
+            '1': 'inicio',
+            '2': 'autores',
+            '3': 'problematica',
+            '4': 'ruta',
+            '5': 'evidencias',
+            '6': 'reflexion',
+            '7': 'referencias',
+        };
+        if (key >= '1' && key <= '7') {
+            const targetId = sectionKeys[key];
+            if (targetId) {
+                e.preventDefault();
+                const targetEl = document.getElementById(targetId);
+                if (targetEl) {
+                    const pos = targetEl.getBoundingClientRect().top + window.pageYOffset - headerOffset2;
+                    window.scrollTo({ top: pos, behavior: 'smooth' });
+                    showKbdHint('Sección <kbd>' + key + '</kbd> · ' + sections[parseInt(key) - 1].label);
+                }
+            }
+            return;
+        }
+
+        // G — mostrar Gracias
+        if (key === 'g' || key === 'G') {
+            e.preventDefault();
+            openGracias();
+            return;
+        }
+
+        // Escape — cerrar pantalla de gracias
+        if (key === 'Escape') {
+            if (graciasOverlay && graciasOverlay.classList.contains('open')) {
+                closeGracias();
+            }
+            return;
+        }
+
+        // ? — mostrar ayuda
+        if (key === '?') {
+            e.preventDefault();
+            showKbdHint(
+                '<kbd>1</kbd>-<kbd>7</kbd> Secciones &nbsp;·&nbsp; <kbd>G</kbd> Gracias &nbsp;·&nbsp; <kbd>Esc</kbd> Cerrar &nbsp;·&nbsp; <kbd>?</kbd> Ayuda',
+                4000
+            );
+            return;
+        }
+    });
 });

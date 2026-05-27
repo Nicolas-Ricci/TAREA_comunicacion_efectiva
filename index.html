@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body style="">
@@ -41,6 +42,60 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Timelapse vertical de secciones (izquierda) -->
+    <nav class="v-timelapse" id="vTimelapse" aria-label="Progreso del recorrido">
+        <div class="vt-line" aria-hidden="true"></div>
+        <button class="vt-dot" data-section="inicio" data-num="01" aria-label="Ir a Inicio" title="Inicio">
+            <span class="vt-dot-ring"></span>
+            <span class="vt-dot-num">01</span>
+            <span class="vt-label">Inicio</span>
+        </button>
+        <button class="vt-dot" data-section="autores" data-num="02" aria-label="Ir a Autores" title="Autores">
+            <span class="vt-dot-ring"></span>
+            <span class="vt-dot-num">02</span>
+            <span class="vt-label">Autores</span>
+        </button>
+        <button class="vt-dot" data-section="problematica" data-num="03" aria-label="Ir a Problemática" title="Problemática">
+            <span class="vt-dot-ring"></span>
+            <span class="vt-dot-num">03</span>
+            <span class="vt-label">Problemática</span>
+        </button>
+        <button class="vt-dot" data-section="ruta" data-num="04" aria-label="Ir a Proceso" title="Proceso">
+            <span class="vt-dot-ring"></span>
+            <span class="vt-dot-num">04</span>
+            <span class="vt-label">Proceso</span>
+        </button>
+        <button class="vt-dot active" data-section="evidencias" data-num="05" aria-label="Ir a Evidencias" title="Evidencias">
+            <span class="vt-dot-ring"></span>
+            <span class="vt-dot-num">05</span>
+            <span class="vt-label">Evidencias</span>
+        </button>
+        <button class="vt-dot" data-section="reflexion" data-num="06" aria-label="Ir a Reflexión" title="Reflexión">
+            <span class="vt-dot-ring"></span>
+            <span class="vt-dot-num">06</span>
+            <span class="vt-label">Reflexión</span>
+        </button>
+        <button class="vt-dot" data-section="referencias" data-num="07" aria-label="Ir a Referencias" title="Referencias">
+            <span class="vt-dot-ring"></span>
+            <span class="vt-dot-num">07</span>
+            <span class="vt-label">Referencias</span>
+        </button>
+    </nav>
+
+    <!-- Grupo derecho: QR siempre visible + Gracias -->
+    <div class="right-group" id="rightGroup">
+        <!-- Llamado a la acción -->
+        <span class="qr-cta">📱 Escanea el QR</span>
+        <!-- QR badge siempre visible -->
+        <div class="qr-badge" id="qrBadge" title="Escanea para abrir en tu celular">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&amp;data=https://nicolas-ricci.github.io/TAREA_comunicacion_efectiva/" alt="QR del sitio" class="qr-badge-img" loading="lazy">
+        </div>
+        <!-- Botón Gracias (reemplaza al back-to-top) -->
+        <button class="gracias-btn" id="graciasBtn" aria-label="Mostrar pantalla de cierre" title="Finalizar presentación">
+            🎬 Gracias
+        </button>
+    </div>
 
     <main id="editableContent">
 
@@ -107,7 +162,7 @@
                     <!-- Autor 1 -->
                     <article class="author-card editable-container reveal">
                         <div class="author-photo uploader" data-type="image" aria-label="Subir foto">
-                            <img src="uploads/file-1779760128628-497803382.png" alt="Nicolás Ricci Ale" class="photo-img" loading="lazy">
+                            <img src="uploads/file-1779909978962-364465143.png" alt="Nicolás Ricci Ale" class="photo-img" loading="lazy">
                             <div class="upload-overlay"><span>📸 Subir Foto 3:4</span></div>
                         </div>
                         <div class="author-info">
@@ -120,7 +175,7 @@
                     <!-- Autor 2 -->
                     <article class="author-card editable-container reveal reveal-delay-1">
                         <div class="author-photo uploader" data-type="image" aria-label="Subir foto">
-                            <img src="uploads/file-1779760138195-744161771.png" alt="Joel Salinas Vásquez" class="photo-img" loading="lazy">
+                            <img src="uploads/file-1779909983386-892755147.png" alt="Joel Salinas Vásquez" class="photo-img" loading="lazy">
                             <div class="upload-overlay"><span>📸 Subir Foto 3:4</span></div>
                         </div>
                         <div class="author-info">
@@ -133,7 +188,7 @@
                     <!-- Autor 3 -->
                     <article class="author-card editable-container reveal reveal-delay-2">
                         <div class="author-photo uploader" data-type="image" aria-label="Subir foto">
-                            <img src="uploads/file-1779760141999-469834137.png" alt="Johnson Mostajo Rojas" class="photo-img" loading="lazy">
+                            <img src="uploads/file-1779909987120-797421272.png" alt="Johnson Mostajo Rojas" class="photo-img" loading="lazy">
                             <div class="upload-overlay"><span>📸 Subir Foto 3:4</span></div>
                         </div>
                         <div class="author-info">
@@ -146,7 +201,7 @@
                     <!-- Autor 4 -->
                     <article class="author-card editable-container reveal reveal-delay-3">
                         <div class="author-photo uploader" data-type="image" aria-label="Subir foto">
-                            <img src="uploads/file-1779760144980-657144002.png" alt="Anderson Martínez Junes" class="photo-img" loading="lazy">
+                            <img src="uploads/file-1779909991219-998271089.png" alt="Anderson Martínez Junes" class="photo-img" loading="lazy">
                             <div class="upload-overlay"><span>📸 Subir Foto 3:4</span></div>
                         </div>
                         <div class="author-info">
@@ -571,6 +626,54 @@ Perú.<o:p></o:p></p>
     </footer>
 
     <!-- ============================================= -->
+    <!-- OVERLAY DE BIENVENIDA                         -->
+    <!-- ============================================= -->
+    <div class="welcome-overlay" id="welcomeOverlay">
+        <div class="welcome-box">
+            <div class="welcome-brand">
+                <img src="uploads/Logo-autonoma.png" alt="Universidad Autónoma del Perú" class="welcome-logo" loading="eager">
+                <span class="welcome-badge">Grupo N.° 3</span>
+            </div>
+            <h2 class="welcome-title">Portafolio Académico Multimodal</h2>
+            <p class="welcome-sub">Brecha digital y educación virtual en zonas rurales del Perú · ODS 4</p>
+            <div class="welcome-authors">
+                <span class="welcome-author">Nicolás Ricci · Coordinador</span>
+                <span class="welcome-author">Joel Salinas · Investigador</span>
+                <span class="welcome-author">Johnson Mostajo · Editor</span>
+                <span class="welcome-author">Anderson Martínez · Redactor</span>
+            </div>
+            <p class="welcome-lecture">Comunicación Efectiva · Eielson S. Valberde · Ciclo 2026-I</p>
+            <button class="btn btn-primary welcome-btn" id="welcomeBtn">Comenzar recorrido →</button>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- PANTALLA DE CIERRE "GRACIAS"                  -->
+    <!-- ============================================= -->
+    <div class="gracias-overlay" id="graciasOverlay">
+        <div class="gracias-screen">
+            <button class="gracias-close-btn" id="graciasCloseBtn" aria-label="Cerrar pantalla">×</button>
+            <div class="gracias-content">
+                <div class="gracias-icon">🎓</div>
+                <h2 class="gracias-title">Gracias por su atención</h2>
+                <p class="gracias-sub">Portafolio Académico Multimodal</p>
+                <p class="gracias-grupo">Grupo N.° 3 · Comunicación Efectiva</p>
+                <div class="gracias-names">
+                    <span>Nicolás Ricci</span>
+                    <span>Joel Salinas</span>
+                    <span>Johnson Mostajo</span>
+                    <span>Anderson Martínez</span>
+                </div>
+                <p class="gracias-lecture">Universidad Autónoma del Perú · Ciclo 2026-I</p>
+                <div class="gracias-actions">
+                    <button class="btn btn-primary" id="volverInicioBtn">↻ Volver al inicio</button>
+                    <button class="btn gracias-cerrar-btn" id="graciasCerrarBtn">× Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
     <!-- MODALES DE EVIDENCIAS                         -->
     <!-- ============================================= -->
     <div class="modal-backdrop" id="modal-backdrop"></div>
@@ -579,7 +682,7 @@ Perú.<o:p></o:p></p>
         <div class="modal-content modal-pdf">
             <button class="modal-close" aria-label="Cerrar">×</button>
             <h3 class="modal-title">Informe académico</h3>
-            <iframe src="uploads/informe.pdf" title="Informe Académico"></iframe>
+            <iframe src="uploads/informe.pdf" title="Informe Académico" loading="lazy"></iframe>
         </div>
     </div>
 
@@ -587,7 +690,7 @@ Perú.<o:p></o:p></p>
         <div class="modal-content modal-pdf">
             <button class="modal-close" aria-label="Cerrar">×</button>
             <h3 class="modal-title">Texto argumentativo final</h3>
-            <iframe src="uploads/ensayo.pdf" title="Texto Argumentativo"></iframe>
+            <iframe src="uploads/ensayo.pdf" title="Texto Argumentativo" loading="lazy"></iframe>
         </div>
     </div>
 
